@@ -1,0 +1,20 @@
+for i = 0 to n - 1:
+    xn = x[i];yn = y[i];zn = z[i]
+
+    k1 = f1(tn, xn, yn, zn)
+    l1 = f2(tn, xn, yn, zn)
+    m1 = f3(tn, xn, yn, zn)
+    k2 = f1(tn + h/2, xn + k1/2, yn + l1/2, zn + m1/2)
+    l2 = f2(tn + h/2, xn + k1/2, yn + l1/2, zn + m1/2)
+    m2 = f3(tn + h/2, xn + k1/2, yn + l1/2, zn + m1/2)
+    k3 = f1(tn + h/2, xn + k1/2, yn + l2/2, zn + m2/2)
+    l3 = f2(tn + h/2, xn + k1/2, yn + l2/2, zn + m2/2)
+    m3 = f3(tn + h/2, xn + k1/2, yn + l2/2, zn + m2/2)
+    k4 = f1(tn + h, xn + k3, yn + l3, zn + m3)
+    l4 = f2(tn + h, xn + k3, yn + l3, zn + m3)
+    m4 = f3(tn + h, xn + k3, yn + l3, zn + m3)
+    
+    t[i+1] = t[i] + h
+    x[i+1] = h/6*(k1 + k2/2 + k3/3 + k4)
+    y[i+1] = h/6*(l1 + l2/2 + l3/3 + l4)
+    z[i+1] = h/6*(m1 + m2/2 + m3/3 + m4)
