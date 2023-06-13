@@ -1,10 +1,12 @@
 \documentclass{wscpaperproc}
-\usepackage[spanish, activeacute]{babel}
+% \usepackage[spanish, activeacute]{babel}
 \usepackage{latexsym}
 %\usepackage{caption}
 \usepackage{graphicx}
 \usepackage{mathptmx}
 \usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{setspace}
 
 %
 %****************************************************************************
@@ -83,6 +85,8 @@
 %               for the last author, separate with "and"
 %
 \WSCpagesetup{Álvarez, Cordero, Díaz, Guerra, and Llerena}
+% \pagestyle{myheadings}
+% \markright{Álvarez, Cordero, Díaz, Guerra, and Llerena}
 
 % AUTHOR: Enter the title, all letters in upper case
 \title{Análisis de {\it Stability and Numerical Simulation of Prey-predator System with Holling
@@ -140,27 +144,26 @@ En el Informe debe Presentar:
 	\item Valoraremos las iniciativas que presenten, como pueden ser, interfaces gráficas, bases de datos, elementos  vinculen con otras asignaturas de la especialidad.
 \end{itemize}
 
-\section*{Estructura de la platilla}
 \section*{Resumen}
-Este artículo examina la estabilidad local de un modelo de presa-depredador con estructura de etapas en
-las poblaciones de presas. Se analizan los puntos de equilibrio y se realiza una exploración numérica
-para mostrar la existencia de un ciclo límite estable. Los resultados confirman los hallazgos analíticos
-y revelan el comportamiento dinámico local del modelo, considerando las interacciones entre presas
-jóvenes, adultas y depredadores. Se resalta la importancia de las condiciones para la estabilidad
-del punto de equilibrio interior. Además, se plantea la necesidad de investigar las bifurcaciones
-de Hopf en estudios futuros para comprender mejor el comportamiento global del modelo. Estos hallazgos
-contribuyen a ampliar nuestro conocimiento sobre la dinámica de los sistemas presa-depredador con
-estructura de etapas.
+\textcolor{red}{Este artículo examina la estabilidad local de un modelo de presa-depredador con estructura de etapas en
+	las poblaciones de presas. Se analizan los puntos de equilibrio y se realiza una exploración numérica
+	para mostrar la existencia de un ciclo límite estable. Los resultados confirman los hallazgos analíticos
+	y revelan el comportamiento dinámico local del modelo, considerando las interacciones entre presas
+	jóvenes, adultas y depredadores. Se resalta la importancia de las condiciones para la estabilidad
+	del punto de equilibrio interior. Además, se plantea la necesidad de investigar las bifurcaciones
+	de Hopf en estudios futuros para comprender mejor el comportamiento global del modelo. Estos hallazgos
+	contribuyen a ampliar nuestro conocimiento sobre la dinámica de los sistemas presa-depredador con
+	estructura de etapas.}
 \section{INTRODUCCIóN}
 \label{sec:intro}
 El propósito de este documento es hacer un análisis de {\it Stability and Numerical Simulation of Prey-predator System with Holling
-		Type-II Functional Responses for Adult Prey}, artículo elaborado por ña especialista analítica Dian Savitri.Fue presentado en el MISEIC(Matematics,
+		Type-II Functional Responses for Adult Prey}, artículo elaborado por la especialista analítica Dian Savitri. Fue presentado en el MISEIC(Matematics,
 Informatics, Science and Education International Conference) en 2019 y publicado en Journal of Physics: Conference Series, bajo la licencia de IOP Publishing.
-Factor de impacto de la revista: 0.227 (en la fecha de publicación del artículo, actualmente la revista tiene un factor de impacto de 0.21).
+Factor de impacto de la revista: 0.227, en la fecha de publicación del artículo. Actualmente la revista tiene un factor de impacto de 0.21.
+
 
 	{\bf Objetivos del artículo:} Se analiza la estabilidad local del modelo presa-depredador. El modelo fue construido a partir de dos presas que involucran
-una estructura de etapa y un depredador, y tiene una manera mucho más simple de simular la diversidad que los modelos existentes, y presenta nuevos fenómenos
-en el mundo real. Posee tres equilibrios positivos: el original, la extinción del depredador y el punto interior. El artículo hace un estudio de la dinámica
+una estructura de etapa y un depredador. Posee tres equilibrios positivos: el original, la extinción del depredador y el punto interior. El artículo hace un estudio de la dinámica
 del comportamiento de las interacciones presa-depredador, estructuradas por etapas con la función de respuesta Holling tipo II(esta respuesta funcional se
 refiere al cambio en el comportamiento de los individuos en función de la densidad del huésped o presa) para presas adultas. En un sistema dinámico,
 si hay ciclos límites, entonces el punto de equilibrio interior es el centro, en estos hace referencia a que los ciclos límites fueron generados por "Hopf Bifurcation"
@@ -169,58 +172,278 @@ los equilibrios en detalle con las condiciones de existencia e ilustra la estabi
 los resultados.
 
 El estudio pretende detectar los ciclos límites con sus retratos de fase y mostrar numéricamente que existe un ciclo límite estable.
-Técnicas utilizadas:
+
+\subsection*{Técnicas utilizadas:}
 \begin{itemize}
 	\item Criterio Routh Hurwitz: consiste en un simple procedimiento o algoritmo para poder determinar si existe alguna raíz o polo en el semiplano derecho del
 	      plano complejo “s”, donde si al menos existe una raíz el sistema es inestable, caso contrario si no hay ninguna raíz en el semiplano derecho el sistema es estable.
 	\item Usando python y una implementación computacional del método Runge-Kutta de orden 4 se resolvió el sistema presa-depredador.
-	\item Respuesta funcional de Beddington De-Angelis: similar a Holling tipo II, pero contiene un término adicional que describe la interferencia mutua de los depredadores.
 \end{itemize}
 \subsection{Estructura del trabajo}
 *Insertar especie d índice
 
 \section{Resultados fundamentales.}
 
-Muestre sólo las ecuaciones más importantes y numere únicamente las ecuaciones mostradas a las que se hace referencia explícita en el texto. \\
 
-$$s^2 = \frac 1 {n-1} \sum_{i=1}^n (Y_i - \bar Y)^2.$$
+Ecuaciones que ilustran el modelo matemático utilizado:
 
-\begin{equation}%\label{eq:quadratic2}
-	ax^2 + bx + c = 0, \mbox{ donde } a \ne 0.
+\begin{equation}\label{dx}
+	\frac{dx}{dt} = rx(1-\frac{x}{k})-\beta x-\alpha xz
+\end{equation}
+\begin{equation}\label{dy}
+	\frac{dy}{dt} = \beta x-\frac{\eta yz}{y+m}-\mu y
+\end{equation}
+\begin{equation}\label{dz}
+	\frac{dz}{dt} = \alpha_1 xz+\rho z^2-\frac{\eta_1z^2}{y+m}
 \end{equation}
 
-En el texto, cada referencia a un número de ecuación debe ir también entre paréntesis. Por ejemplo, la solución de está dada por  en los Axenos .
+\vspace*{1cm}
 
+El término $rx(1-\frac{x}{k})$ de (\ref*{dx}) es conocido como ecuación
+logística y se compone por:
+\vspace*{0.3cm}
 
-\begin{equation}% \label{eq:quadratic_second}
-	ax^2 + bx + c = 0
-\end{equation}
+$x$: población de presas juveniles.
 
-\subsection{Métodos y algoritmos utilizados}
-Técnicas utilizadas:
+$t$: tiempo.
+
+$r$ constante que define la tasa de crecimiento.
+
+$k$: capacidad de carga o persistencia.
+
+\vspace*{0.5cm}
+
+Esta primera ecuación representa el modelo de crecimiento poblacional en las
+presas jóvenes. Para ello se tuvo en cuenta:
 \begin{itemize}
-	\item Criterio Routh Hurwitz: consiste en un simple procedimiento o algoritmo para poder determinar si existe alguna raíz o polo en el semiplano derecho del
-	      plano complejo “s”, donde si al menos existe una raíz el sistema es inestable, caso contrario si no hay ninguna raíz en el semiplano derecho el sistema es estable.
-	\item Usando python y una implementación computacional del método Runge-Kutta de orden 4 se resolvió el sistema presa-depredador.
-	\item Respuesta funcional de Beddington De-Angelis: similar a Holling tipo II, pero contiene un término adicional que describe la interferencia mutua de los depredadores.
+	\item La tasa de reproducciónes proporcional a la población existente.
+	\item La tasa de reproducción es proporcional a la cantidad de recursos disponibles.
+	\item La competición por los recursos disponibles tiende a limitar el crecimiento poblacional.
 \end{itemize}
 
-Este estudio ha examinado la estabilidad local de un modelo de interacción presa-depredador con estructura
-de etapas en las poblaciones de presas. Se han identificado y analizado los puntos de equilibrio,
-encontrando tres equilibrios positivos: el original, la extinción del depredador y el punto interior.
-Se ha demostrado que el punto interior es localmente estable bajo ciertas condiciones. Las simulaciones
-numéricas han respaldado los resultados analíticos, proporcionando evidencia adicional del comportamiento
-local y global del modelo. Además, se ha detectado la existencia de un ciclo límite estable, lo que destaca
-la importancia de considerar la estructura de etapas en la dinámica presa-depredador. Estos hallazgos
-contribuyen a mejorar nuestra comprensión de los sistemas ecológicos y proporcionan una base sólida para
-futuras investigaciones sobre bifurcaciones y estabilidad global en este tipo de modelos.
+$\beta x$ representa las presas que se vuelven adultas.
+
+\vspace*{0.3cm}
+
+$\beta$: factor de conversión de presa joven a presa adulta
+
+\vspace*{0.3cm}
+
+La velocidad con que varía la población de presas $x$ es proporcional al número de encuentros con los depredadores $z$ según la ecuación de Lotka-Volterra:
+$$\frac{dx}{dt}=\alpha xz$$
+$\alpha$: tasa de eliminación de presas por parte de los depredadores.
+
+\vspace*{1cm}
+
+Por otra parte (\ref*{dy}) se refiere a la población de presas adultas.
+
+El primer término de la ecuación ya fue analizado anteriormente, es la cantidad de presas jóvenes que se convierten en adultas.
+
+El proceso de eliminación de presas por los depredadores se describe a partir del modelo Holling Tipo II, que establece:
+
+$$\frac{dy}{dt} = -\frac{\eta yz}{y+m}y$$
+
+donde:
+
+$\eta$: valor máximo de la tasa de reducción per cápita de presas adultas debido a los depredadores.
+
+$m$: coeficiente de protección ambiental para las presas adultas.
+
+Además se considera las presas que mueren de forma natural $\mu y$.
+
+$\mu$: tasa de mortalidad en presas adultas.
 
 
-	{\footnotesize
-		\begin{hangref}
-			\item Banks, J., J. S. Carson, B. L. Nelson, and D. M. Nicol. 2000. \textit{Discrete-Event System Simulation}. 3rd ed. Upper Saddle River, New Jersey: Prentice-Hall, Inc.
-		\end{hangref}
-	}
+\vspace*{1cm}
+
+Por último (\ref*{dz}) modela la población de depredadores. $\alpha_1 xz+\rho z^2$ representa el crecimiento según disponibilidad de alimentos favoritos de los depredadores.
+
+$\alpha_1$: tasa de disponibilidad de alimentos favoritos de los depredadores.
+
+\vspace*{0.3cm}
+
+$\rho z^2$ es el crecimiento intrínseco.
+
+$\rho$: tasa de crecimiento intrínseco.
+
+\vspace*{0.3cm}
+
+Además se considera que esta población decrece a partir del modelo de Leslie-Gower modificado:
+
+$$\frac{dz}{dt} =-\frac{\rho z^2}{n y+c}$$
+
+$$\frac{dz}{dt} =-\frac{\frac{\rho}{x} z^2}{y+\frac{c}{n}}$$
+
+$n$: calidad energética de la presa como alimento.
+
+$c$: tamaño máximo de disponibilidad de alimentos alternativos.
+
+\vspace*{0.5cm}
+
+$$\frac{\rho}{n}=n_1$$
+
+$$\frac{c}{n}=m$$
+
+$n_1$: crecimiento intríseco dividido por el aporte de las presas al depredador.
+
+$m$: impacto de la escacez de presas, en la supervivencia y reproducción de los depredadores.
+
+
+\vspace*{3cm}
+
+{\LARGE \bf *Insertar parte de Abel}
+
+\vspace*{3cm}
+
+
+\section*{Métodos y algoritmos utilizados}
+
+
+\subsection*{Ejemplos Numéricos. Reproducción de los experimentos}
+
+Para reproducir los experimentos se utilizó el método de Runge-Kutta de orden 4 (RK4), programado
+en Python 3.10 y haciendo uso de librerías para la manipulación eficiente de vectores como Numpy y
+Scipy.
+
+El metodo de Runge-Kutta es método de un paso en el cual se usa un tamaño de paso $h$ para calcular
+los siguientes valores a partir de valores previos.
+
+Como en este trabajo se utiliza un sistema de tres ecuaciones,
+es necesario de manera análoga crear otras variables $l$ y $m$ para
+las funciones $y$ y $z$. El pseudocódigo sería de la siguiente manera:
+
+
+\doublespacing
+\begin{equation*}
+	\begin{split}
+		for\ i=0\ to\ n - 1:\\
+		&xn = x[i];yn = y[i];zn = z[i]\\
+		\\
+		&k_1 = f_1(t_n, x_n, y_n, z_n)\\
+		&l_1 = f_2(t_n, x_n, y_n, z_n)\\
+		&m_1 = f_3(t_n, x_n, y_n, z_n)\\
+		&k_2 = f_1(t_n + \frac{h}{2}, x_n + \frac{k_1}{2}, y_n + \frac{l_1}{2}, z_n + \frac{m_1}{2})\\
+		&l_2 = f_2(t_n + \frac{h}{2}, x_n + \frac{k_1}{2}, y_n + \frac{l_1}{2}, z_n + \frac{m_1}{2})\\
+		&m_2 = f_3(t_n + \frac{h}{2}, x_n + \frac{k_1}{2}, y_n + \frac{l_1}{2}, z_n + \frac{m_1}{2})\\
+		&k_3 = f_1(t_n + \frac{h}{2}, x_n + \frac{k_2}{2}, y_n + \frac{l_2}{2}, z_n + \frac{m_2}{2})\\
+		&l_3 = f_2(t_n + \frac{h}{2}, x_n + \frac{k_2}{2}, y_n + \frac{l_2}{2}, z_n + \frac{m_2}{2})\\
+		&m_3 = f_3(t_n + \frac{h}{2}, x_n + \frac{k_2}{2}, y_n + \frac{l_2}{2}, z_n + \frac{m_2}{2})\\
+		&k_4 = f_1(t_n + h, x_n + k_3, y_n + l_3, z_n + m_3)\\
+		&l_4 = f_2(t_n + h, x_n + k_3, y_n + l_3, z_n + m_3)\\
+		&m_4 = f_3(t_n + h, x_n + k_3, y_n + l_3, z_n + m_3)\\
+		\\
+		&t[i+1] = t[i] + h\\
+		&x[i+1] = \frac{h}{6}(k_1 + \frac{k_2}{2} + \frac{k_3}{3} + k_4)\\
+		&y[i+1] = \frac{h}{6}(l_1 + \frac{l_2}{2} + \frac{l_3}{3} + l_4)\\
+		&z[i+1] = \frac{h}{6}(m_1 + \frac{m_2}{2} + \frac{m_3}{3} + m_4)\\
+	\end{split}
+\end{equation*}
+\singlespacing
+
+El tamaño de paso se estableció para todos los experimentos en
+$h=2^{-10}$ con el cual se obtienen resultados muy exactos teniendo
+en cuenta que el error de RK4 es del orden $O(h^5)$, con lo que tendriamos
+que el error sería aproximadamente del orden de $e \approx 2^{-50}$.
+
+\subsection*{Reproducción de los experimentos}
+
+Para los experimentos se utilizaron para los parámetros los valores de la siguiente tabla:
+
+\begin{tabular}{p{1cm} | p{1cm} | p{1cm} | p{1cm} | p{1cm} | p{1cm} | p{1cm} | p{1cm} | p{1cm} }
+	% aslask & gahbh
+	$\#$ & $r$  & $\alpha$ & $\alpha_1$ & $\eta$ & $\eta_1$ & $K$  & $\rho$ & $m$  \\
+	1    & 0.82 & 1.56     & 1.12       & 2.41   & 1.83     & 12.0 & 1.38   & 0.13 \\
+	2    & 1.32 & 1.56     & 0.72       & 2.41   & 0.41     & 2.8  & 1.38   & 0.23 \\
+	3    & 1.32 & 0.76     & 0.72       & 0.6    & 0.41     & 2.8  & 0.78   & 0.23 \\
+	4    & 0.82 & 0.76     & 0.72       & 1.2    & 0.41     & 2.8  & 1.38   & 0.23 \\
+	5    & 1.32 & 1.16     & 0.72       & 0.31   & 0.41     & 2.8  & 0.78   & 0.23 \\
+\end{tabular}
+\\
+
+Además, se usó fijo $\beta=0.87$ y $\mu=0.11$.
+
+\vspace*{0.5cm}
+{\bf Primer experimento}
+
+En el primer conjunto de experimentos se usaron los valores iniciales $[x_0=3.01, y_0=5.05, z_0=4.28]$ (1.1)
+y $[x_0=4.6, y_0=5.9, z_0=3.1]$(1.2).
+
+\begin{figure}[h!]
+	\includegraphics[width=\linewidth]{./images/1.png}
+	\caption{Experimento \#1}
+\end{figure}
+
+\vspace*{0.5cm}
+{\bf Segundo experimento}
+
+En el segundo conjunto de experimentos, se usaron valores tal que $\eta > \beta$ y $\eta > \alpha$.
+De valores iniciales se utilizaron $[x_0=0.3, y_0=2.4, z_0=3.9]$(2.1),
+$[x_0=0.6, y_0=2.4, z_0=3.9]$(2.2) y $[x_0=2.1, y_0=1.2, z_0=1.1]$
+
+La simulación muestra que todos los valores van al punto de equilibrio interior.
+
+\begin{figure}[h!]
+	\includegraphics[width=\linewidth]{./images/2.png}
+	\caption{Experimento \#2}
+\end{figure}
+
+\vspace*{1cm}
+{\bf Tercer experimento}
+
+En el tercer experimento, se usaron valores tal que $\alpha > \beta$
+Los valores iniciales usados fueron $[x_0=0.3, y_0=2.4, z_0=3.9]$. La simulación muestra
+que los valores van al punto de equilibrio.
+
+\begin{figure}[h!]
+	\includegraphics[width=\linewidth]{./images/3.png}
+	\caption{Experimento \#3}
+\end{figure}
+
+\vspace*{0.5cm}
+{\bf Cuarto experimento}
+
+En el cuarto experimento, se usaron valores tal que $\eta = \alpha$.
+Los valores iniciales usados fueron $[x_0=1.2, y_0=2.1, z_0=4.28]$. La simulación muestra
+que los valores van al punto de equilibrio.
+
+\begin{figure}[h!]
+	\includegraphics[width=\linewidth]{./images/4.png}
+	\caption{Experimento \#4}
+\end{figure}
+
+\vspace*{7cm}
+{\bf Quinto experimento}
+
+En el quinto experimento, se usaron valores tal que $\eta > \beta$ y $\eta > \alpha$.
+Los valores iniciales usados fueron $[x_0=1.2, y_0=2.1, z_0=2.4]$. La simulación muestra
+que los valores van al punto de equilibrio.
+
+\begin{figure}[!h]
+	\includegraphics[width=\linewidth]{./images/5.png}
+	\caption{Experimento \#5}
+\end{figure}
+\vspace*{1cm}
+
+
+\section*{Conclusiones}
+
+\textcolor{red}{
+	Este estudio ha examinado la estabilidad local de un modelo de interacción presa-depredador con estructura
+	de etapas en las poblaciones de presas. Se han identificado y analizado los puntos de equilibrio,
+	encontrando tres equilibrios positivos: el original, la extinción del depredador y el punto interior.
+	Se ha demostrado que el punto interior es localmente estable bajo ciertas condiciones. Las simulaciones
+	numéricas han respaldado los resultados analíticos, proporcionando evidencia adicional del comportamiento
+	local y global del modelo. Además, se ha detectado la existencia de un ciclo límite estable, lo que destaca
+	la importancia de considerar la estructura de etapas en la dinámica presa-depredador. Estos hallazgos
+	contribuyen a mejorar nuestra comprensión de los sistemas ecológicos y proporcionan una base sólida para
+	futuras investigaciones sobre bifurcaciones y estabilidad global en este tipo de modelos.
+}
+
+% {\footnotesize
+% 	\begin{hangref}
+% 		\item \textcolor{red}{Banks, J., J. S. Carson, B. L. Nelson, and D. M. Nicol. 2000. \textit{Discrete-Event System Simulation}. 3rd ed. Upper Saddle River, New Jersey: Prentice-Hall, Inc.}
+% 	\end{hangref}
+% }
 
 
 
@@ -233,10 +456,11 @@ futuras investigaciones sobre bifurcaciones y estabilidad global en este tipo de
 
 \section*{Agradciemientos}
 
-
-% \appendix
+-Creo q nadie :)
+% \ppendix
 
 \section{Anexos}
+-Tercero B?
 
 
 \end{document}
