@@ -291,7 +291,71 @@ $m$: impacto de la escacez de presas, en la supervivencia y reproducción de los
 
 \vspace*{3cm}
 
-{\LARGE \bf *Insertar parte de Abel}
+\section*{Anális de los puntos de equilibrio y su estabilidad}
+
+Los puntos de equilibrio para este sistema son aquellos que satisfacen:
+$$\frac{dx}{dt}=\frac{dy}{dt}=\frac{dz}{dt}=0$$
+
+Estos puntos son:
+\begin{itemize}
+	\item $P_1=(0, 0, 0)$
+	\item $P_2=(\frac{k(r-\beta)}{r}, \frac{\beta k(r-\beta)}{\mu r}, 0)$
+	\item $P_3=(x_3, y_3, z_3)$
+\end{itemize}
+
+La estabilidad de los puntos de equilibrio se puede analizar calculanfo la matriz Jacobiana. Para nuestro sistema sería:
+$$ J(x^*, y^*, z^*) = \left(
+	\begin{array}{ccc}
+			r-\frac{2rx}{k}-\beta-\alpha z & 0                                       & -\alpha x                       \\
+			\beta                          & \frac{-nz}{y+m}+\frac{nyz}{(y+m)^2}-\mu & \frac{-ny}{y+m}                 \\
+			\alpha_1z                      & \frac{n_1z^2}{(y+m)^2}                  & 2pz-\frac{2n_1z}{y+m}+\alpha_1x
+		\end{array}
+	\right)$$
+
+La ecuación característica esta dada pot el $det(J(x^*, y^*, z^*)-I)=0$ donde $(x^*, y^*, z^*)$ es un punto de equilibrio del sistema.
+Nosotros solo analizaremos la estabilidad de los puntos de equilibrio no negativos por la parte real de los eigenvalores de la matriz Jacobiana.
+\vspace*{0.5cm}
+Para $P_1$ sería:
+$$\left|
+	\begin{array}{ccc}
+		(-\beta+r)-\lambda & 0            & 0        \\
+		\beta              & -\mu-\lambda & 0        \\
+		0                  & 0            & -\lambda
+	\end{array}
+	\right| =0$$
+De ahí que sus eigenvalores están dados por $((-\beta+r)-\lambda)(-\mu-\lambda)(-\lambda)=0$. Pero esta ecuación siempre tiene valor negativo
+\textcolor{red}{$\lambda_1=-$}, también si $r<\beta$, pero \textcolor{red}{$\lambda_3=0$}. Por tanto en $P_1$ el sistema es inestable.
+
+\vspace*{0.5cm}
+
+Para $P_2$ sería:
+$$\left|
+	\begin{array}{ccc}
+		(\beta+r)-\lambda & 0            & \frac{\alpha k(\beta-r)}{r}                                      \\
+		\beta             & -\mu-\lambda & \frac{n\beta k(\beta-r)}{r\mu (\frac{\beta k(r-\beta)}{r\mu}+m)} \\
+		0                 & 0            & \frac{\alpha_1 k(\beta-r)}{r}-\lambda
+	\end{array}
+	\right| =0$$
+
+Que luego de un poco de trabajo algebraico obtendrías $\textcolor{red}{\lambda_1=\beta-r, \lambda_2=cosa q no entiendo, \lambda_3=\frac{\alpha_1 k(\beta-r)}{r}}$. Por lo que $P_2$ es inestable.
+
+\vspace*{0.5cm}
+
+En el caso $P_3$ sería:
+$$ J(x_3, y_3, z_3) = \left(
+	\begin{array}{ccc}
+			r-\frac{2rx_3}{k}-\beta-\alpha z_3 & 0                                                 & -\alpha x_3                             \\
+			\beta                              & \frac{-nz_3}{y_3+m}+\frac{ny_3z_3}{(y_3+m)^2}-\mu & \frac{-ny_3}{y_3+m}                     \\
+			\alpha_1z_3                        & \frac{n_1z_3^2}{(y_3+m)^2}                        & 2pz_3-\frac{2n_1z_3}{y_3+m}+\alpha_1x_3
+		\end{array}
+	\right)$$
+
+La ecuación característica entonces es de la forma:
+$$\lambda^3+\gamma_1\lambda^2+\gamma_2\lambda+\gamma_3=0 $$
+
+Si usamos el criterio Routh-Hurwitz para analizar la estabilidad en $P_3$ veremos que este
+tiene una parte real negativa si y solo si $\gamma_1>0, \gamma_3>0$ y $\gamma_1\gamma_2-\gamma_3>0$, la coexistencia en $P_3$ es local
+y asintóticamente estable.
 
 \vspace*{3cm}
 
