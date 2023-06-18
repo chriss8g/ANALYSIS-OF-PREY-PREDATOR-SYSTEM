@@ -1,0 +1,59 @@
+% Official presentation theme for Ifi/UiO
+% Implemented by dag@ifi.uio.no
+% Version 2009-08-10
+
+\definecolor{ifi-oliven}{rgb}{0.277,0.258,0.125}
+\setbeamercolor{structure}{fg=ifi-oliven}
+\usecolortheme{rose}
+
+\newif\ifNorskIfiBeamer   \NorskIfiBeamerfalse
+\DeclareOptionBeamer{norsk}{\NorskIfiBeamertrue}
+\DeclareOptionBeamer{nynorsk}{\NorskIfiBeamertrue}
+\ProcessOptionsBeamer
+
+% \RequirePackage{type1cm}
+% \RequirePackage{type1ec}
+
+\mode<presentation>
+\setbeamertemplate{background}
+  {\ifNorskIfiBeamer
+      \def\IfiBeamer@BGA{figures/present.jpg}%
+      \def\IfiBeamer@BGB{figures/diapo.jpg}%
+    \else
+      \def\IfiBeamer@BGA{figures/present.jpg}%
+      \def\IfiBeamer@BGB{figures/diapo.jpg}%
+    \fi
+    \ifnum\insertframenumber=1
+    \includegraphics[width=\paperwidth,height=\paperheight]{\IfiBeamer@BGA}\else
+    \includegraphics[width=\paperwidth,height=\paperheight]{\IfiBeamer@BGB}\fi}
+
+\renewcommand{\frametitle}[1]{\ifnum\insertframenumber=1
+  \vspace*{1cm}\color{white}\LARGE\textbf{#1}\par\bigskip\large\else
+  {\bf\Large #1\par}\medskip\fi}
+
+\defbeamertemplate*{sidebar right}{Ifi}
+{
+  \vfill%
+  \llap{\makebox[\paperwidth]{\usebeamertemplate***{navigation symbols}}}%
+  \vskip2pt%
+}
+
+\defbeamertemplate*{footline}{Ifi}
+{%
+  \leavevmode%
+  \raisebox{13mm}[0pt][0pt]{%
+    \hbox{\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,
+      leftskip=.2cm,rightskip=.2cm plus 1fill]{title in head/foot}%
+      \usebeamerfont{title in head/foot}%
+      \ifnum\insertframenumber=1\else\insertdate\fi
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,
+      leftskip=.2cm plus 1fill,rightskip=.2cm]{title in head/foot}%
+      \usebeamerfont{title in head/foot}%
+      \ifnum\insertframenumber=1\else\insertframenumber\fi
+    \end{beamercolorbox}}}%
+  \vskip 0mm%
+}
+
+\mode
+<all>
