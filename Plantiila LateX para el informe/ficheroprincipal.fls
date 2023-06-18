@@ -705,11 +705,6 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
-INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmr8c.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmri8t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
 INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
@@ -717,6 +712,11 @@ INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmb8t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmr8t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmr8c.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmr8c.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/zptmcm7m.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/psyro.tfm
@@ -777,6 +777,9 @@ INPUT ./images/5.png
 INPUT ./images/5.png
 INPUT ./images/5.png
 INPUT ./images/5.png
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb8t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmb8t.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
 INPUT ficheroprincipal.aux
 INPUT ./ficheroprincipal.out
 INPUT ./ficheroprincipal.out
