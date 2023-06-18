@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1687062696 "/home/christopherwar/Desktop/EDO/Plantiila LateX para el informe/ficheroprincipal.tex" "ficheroprincipal.pdf" "ficheroprincipal" 1687062697
+["pdflatex"] 1687129689 "/home/christopherwar/Desktop/EDO/Plantiila LateX para el informe/ficheroprincipal.tex" "ficheroprincipal.pdf" "ficheroprincipal" 1687129690
   "/etc/texmf/web2c/texmf.cnf" 1660509479 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/christopherwar/Desktop/EDO/Plantiila LateX para el informe/ficheroprincipal.tex" 1687062696 21009 ea289eabbf991565dfc25c59ed92ea63 ""
+  "/home/christopherwar/Desktop/EDO/Plantiila LateX para el informe/ficheroprincipal.tex" 1687129688 21034 771db4a50d3dc6f3e075227a17ecd9f5 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -115,9 +115,9 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1678120696 165012 f177baa1c39a3ebd62c3096a43521a0d ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1687031206 1435855 f44eb2999f6b7efb85d26e55aca7c7a1 ""
   "fancyhdr.sty" 1677054356 20514 2bd550bb88e76551806d7a82e671f42d ""
-  "ficheroprincipal.aux" 1687062697 1929 426dcd252c7018807a917291da9828cb "pdflatex"
-  "ficheroprincipal.out" 1687062697 450 1d6bf129341bbd52ebd14e5e7ea326e5 "pdflatex"
-  "ficheroprincipal.tex" 1687062696 21009 ea289eabbf991565dfc25c59ed92ea63 ""
+  "ficheroprincipal.aux" 1687129690 1929 426dcd252c7018807a917291da9828cb "pdflatex"
+  "ficheroprincipal.out" 1687129690 450 1d6bf129341bbd52ebd14e5e7ea326e5 "pdflatex"
+  "ficheroprincipal.tex" 1687129688 21034 771db4a50d3dc6f3e075227a17ecd9f5 ""
   "images/1.png" 1685716229 90791 a6ef7e6bb1e2ab6815b1b29c40bc13bb ""
   "images/2.png" 1685716229 78690 d3851cc18563930a459ce4d184c9e087 ""
   "images/3.png" 1685716229 105840 d9742f33d025b8143c9ca21634e5c334 ""

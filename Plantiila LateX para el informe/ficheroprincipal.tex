@@ -142,9 +142,9 @@ de Hopf en estudios futuros para comprender mejor el comportamiento global del m
 \label{sec:intro}
 El propósito de este documento es hacer un análisis de [1], artículo elaborado por la especialista analítica Dian Savitri. Fue presentado en el MISEIC(Matematics,
 Informatics, Science and Education International Conference) en 2019 y publicado en Journal of Physics: Conference Series, bajo la licencia de IOP Publishing.
-Factor de impacto de la revista: 0.227, en la fecha de publicación del artículo. Actualmente la revista tiene un factor de impacto de 0.21.
+Factor de impacto del artículo: 0.227, en la fecha de publicación del artículo. Actualmente la revista tiene un factor de impacto de 0.21.
 
-	{\bf Valoración del artículo:} Los autores consideran que [1] presenta varios errores, tanto tipográfico como de contenidos. Su factor de impacto es
+	{\bf Valoración del artículo:} Los autores consideramos que [1] presenta varios errores, tanto tipográfico como de contenidos. Su factor de impacto es
 relativamente bajo. Sin embargo consideramos que se tratan temáticas muy interesantes y de gran utilidad para el desarrollo de la ecología.
 
 {\bf Objetivo del artículo:} Analizar la estabilidad del modelo presa-depredador.
@@ -166,7 +166,7 @@ los resultados.
 \subsection{Estructura del trabajo}
 \begin{itemize}
 	\item Modelo matemático
-	\item Anális de los puntos de equilibrio
+	\item Análisis de los puntos de equilibrio
 	\item Simulaciones numéricas
 \end{itemize}
 
@@ -175,15 +175,17 @@ los resultados.
 
 Ecuaciones que ilustran el modelo matemático utilizado:
 
-\begin{equation}\label{dx}
-	\frac{dx}{dt} = rx(1-\frac{x}{k})-\beta x-\alpha xz
-\end{equation}
-\begin{equation}\label{dy}
-	\frac{dy}{dt} = \beta x-\frac{\eta yz}{y+m}-\mu y
-\end{equation}
-\begin{equation}\label{dz}
-	\frac{dz}{dt} = \alpha_1 xz+\rho z^2-\frac{\eta_1z^2}{y+m}
-\end{equation}
+\begin{eqnarray}\label{dx}
+	\frac{dx}{dt} &=& rx(1-\frac{x}{k})-\beta x-\alpha xz
+\end{eqnarray}
+\begin{eqnarray}\label{dy}
+	\frac{dy}{dt} &=& \beta x-\frac{\eta yz}{y+m}-\mu y
+\end{eqnarray}
+\begin{eqnarray}\label{dz}
+	\frac{dz}{dt} &=& \alpha_1 xz+\rho z^2-\frac{\eta_1z^2}{y+m}
+\end{eqnarray}
+
+
 
 \vspace*{1cm}
 
@@ -197,7 +199,7 @@ Ecuaciones que ilustran el modelo matemático utilizado:
 
 	      $t$: tiempo.
 
-	      $r$ constante que define la tasa de crecimiento.
+	      $r$: constante que define la tasa de crecimiento.
 
 	      $k$: capacidad de carga o persistencia.
 
@@ -206,7 +208,7 @@ Ecuaciones que ilustran el modelo matemático utilizado:
 	      Esta primera ecuación representa el modelo de crecimiento poblacional en las
 	      presas jóvenes. Para ello se tuvo en cuenta:
 	      \begin{itemize}
-		      \item La tasa de reproducciónes proporcional a la población existente.
+		      \item La tasa de reproducción es proporcional a la población existente.
 		      \item La tasa de reproducción es proporcional a la cantidad de recursos disponibles.
 		      \item La competición por los recursos disponibles tiende a limitar el crecimiento poblacional.
 	      \end{itemize}
@@ -273,11 +275,11 @@ Por último (\ref*{dz}) modela la población de depredadores.
 
 	      \vspace*{0.5cm}
 
-	      $$\frac{\rho}{n}=n_1$$
+	      $$\frac{\rho}{n}=\eta_1$$
 
 	      $$\frac{c}{n}=m$$
 
-	      $n_1$: crecimiento intríseco dividido por el aporte de las presas al depredador.
+	      $\eta_1$: crecimiento intríseco dividido por el aporte de las presas al depredador.
 
 	      $m$: impacto de la escacez de presas, en la supervivencia y reproducción de los depredadores.
 \end{itemize}
@@ -285,7 +287,7 @@ Por último (\ref*{dz}) modela la población de depredadores.
 {\it En \ref*{dz} discrepamos de [1]. Consideramos que Savitri pudo tener un error tipográfico, pues en lo adelante asume nuestra
 ecuación, además [2] defiende este modelo.}
 
-\section*{Anális de los puntos de equilibrio y su estabilidad}
+\section*{Análisis de los puntos de equilibrio y su estabilidad}
 
 Los puntos de equilibrio para este sistema son aquellos que satisfacen:
 $$\frac{dx}{dt}=\frac{dy}{dt}=\frac{dz}{dt}=0$$
@@ -340,7 +342,7 @@ $$\left|
 
 Que luego de un poco de trabajo algebraico obtendrías $\textcolor{red}{\lambda_1=\beta-r, \lambda_2=cosa q no entiendo, \lambda_3=\frac{\alpha_1 k(\beta-r)}{r}}$. Por lo que $P_2$ es inestable.
 
-{\it [1] considera este punto inestable, diferimos de su resultado}
+{\it [1] considera este punto estable, diferimos de su resultado}
 
 
 \vspace*{0.5cm}
@@ -357,7 +359,7 @@ $$ J(x_3, y_3, z_3) = \left(
 La ecuación característica entonces es de la forma:
 $$\lambda^3+\gamma_1\lambda^2+\gamma_2\lambda+\gamma_3=0 $$
 
-{Aquí [1] trabaja con $\lambda^2-\ traza\ \lambda+\ deteminante$, esto no es aplicable para sistemas mayores que dos, ni
+{\it Aquí [1] trabaja con $\lambda^2-\ traza\ \lambda+\ deteminante$, esto no es aplicable para sistemas mayores que dos, ni
 es resultado de simplificación alguna}
 
 Si usamos el criterio Routh-Hurwitz para analizar la estabilidad en $P_3$ veremos que este
@@ -433,7 +435,7 @@ Para los experimentos se utilizaron para los parámetros los valores de la sigui
 
 Además, se usó fijo $\beta=0.87$ y $\mu=0.11$.
 
-{\it note que [1] da dos interpretaciones diferentes para la variable $m$, sin embargo ambos conceptos se simulan con igual magnitud}
+	{\it note que [1] da dos interpretaciones diferentes para la variable $m$, sin embargo ambos conceptos se simulan con igual magnitud}
 
 \vspace*{0.5cm}
 {\bf Primer experimento}
@@ -467,7 +469,7 @@ En el tercer experimento, se usaron valores tal que $\alpha > \beta$
 Los valores iniciales usados fueron $[x_0=0.3, y_0=2.4, z_0=3.9]$. La simulación muestra
 que los valores van al punto de equilibrio.
 
-{\it Este experimento difiere del resultado dado por [1]}
+	{\it Este experimento difiere del resultado dado por [1]}
 
 \begin{figure}[h!]
 	\includegraphics[width=\linewidth]{./images/3.png}
@@ -507,7 +509,7 @@ que los valores van al punto de equilibrio.
 
 Este estudio ha examinado la estabilidad de un modelo de interacción presa-depredador con estructura
 de etapas en las poblaciones de presas. Se han identificado y analizado los puntos de equilibrio,
-encontrando tres equilibrios positivos: el original, la extinción del depredador y el punto interior.
+encontrando tres equilibrios positivos: el inicial, la extinción del depredador y el punto interior.
 Se ha demostrado que el punto interior es localmente estable bajo ciertas condiciones. Las simulaciones
 numéricas han respaldado los resultados analíticos, proporcionando evidencia adicional del comportamiento
 del modelo. Estos hallazgos contribuyen a mejorar nuestra comprensión de los sistemas ecológicos. Esta línea de trabajo
