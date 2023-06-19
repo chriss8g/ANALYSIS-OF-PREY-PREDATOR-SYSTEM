@@ -5,11 +5,11 @@ import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 
 from collections import namedtuple
-from types import FunctionType
+from types import FunctionType as func
 
 Params = namedtuple("Params", ['r', 'beta', 'alpha', 'alpha_1', 'n', 'n_1', 'K', 'ro', 'm', 'miu'])
 
-def runge_kutta3( f: FunctionType, g: FunctionType, h: FunctionType, x0: float, y0:float,
+def runge_kutta3( f: func, g: func, h: func, x0: float, y0:float,
                  z0: float, par: Params, a: float, b: float,
                step: float, keep_positive: bool = False) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     rng = np.arange(a, b, step)
@@ -43,9 +43,9 @@ def runge_kutta3( f: FunctionType, g: FunctionType, h: FunctionType, x0: float, 
         l4 = g(t + step, xn + k3 * step, yn + l3 * step, zn + m3 * step, par)
         m4 = h(t + step, xn + k3 * step, yn + l3 * step, zn + m3 * step, par)
 
-        X[i] += xn + (k1 + .5 * k2 + .5 * k3 + k4) * step / 6
-        Y[i] += yn + (l1 + .5 * l2 + .5 * l3 + l4) * step / 6
-        Z[i] += zn + (m1 + .5 * m2 + .5 * m3 + m4) * step / 6
+        X[i] += xn + (k1 + 2 * k2 + 2 * k3 + k4) * step / 6
+        Y[i] += yn + (l1 + 2 * l2 + 2 * l3 + l4) * step / 6
+        Z[i] += zn + (m1 + 2 * m2 + 2 * m3 + m4) * step / 6
 
         if keep_positive:
             X[i] = max(X[i], 0)
