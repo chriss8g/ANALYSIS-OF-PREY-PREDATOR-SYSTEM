@@ -1,5 +1,5 @@
 import numpy as np
-import scipy as sc
+import scipy.integrate as it
 
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
@@ -53,3 +53,9 @@ def runge_kutta3( f: func, g: func, h: func, x0: float, y0:float,
             Z[i] = max(Z[i], 0)
 
     return (rng, X, Y, Z)
+
+def runge_kutta_default(f: func, x0: np.ndarray, a: float, b: float, h: float):
+    t = np.arange(a, b, h)
+    y = it.odeint(f, x0, t)
+
+    return (t, y[:,0], y[:,1], y[:,2])
