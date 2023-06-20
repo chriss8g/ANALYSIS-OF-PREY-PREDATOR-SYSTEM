@@ -252,9 +252,10 @@ Por otra parte (\ref*{dy}) se refiere a la población de presas adultas.
 Por último (\ref*{dz}) modela la población de depredadores.
 
 \begin{itemize}
-	\item $\alpha_1 xz+\rho z^2$ representa el crecimiento según disponibilidad de alimentos favoritos de los depredadores.
+	\item $\alpha_1 xz$ responde al modelo de Lotka-Volterra. Esta ecuación representa que el crecimiento de los depredadores es
+	      proporcional a la caza de presas juveniles.
 
-	      $\alpha_1$: tasa de disponibilidad de alimentos favoritos de los depredadores.
+	      $\alpha_1$: tasa de crecimiento de los depredadores debido a la caza de presas juveniles.
 
 	      \vspace*{0.3cm}
 
@@ -262,25 +263,15 @@ Por último (\ref*{dz}) modela la población de depredadores.
 
 	      $\rho$: tasa de crecimiento intrínseco.
 
-	\item Además se considera que esta población decrece a partir del modelo de Leslie-Gower modificado:
+	\item El tercer término representa la tasa de mortalidad en el esquema de Leslie Gower.
 
-	      $$\frac{dz}{dt} =-\frac{\rho z^2}{n y+c}$$
+	      $\eta_1$: relación del crecimiento intríseco y el factor de conversión de depredación a presa adulta.
 
-	      $$\frac{dz}{dt} =-\frac{\frac{\rho}{x} z^2}{y+\frac{c}{n}}$$
+	      $m$: pérdida residual de los depredadores.
 
-	      $n$: calidad energética de la presa como alimento.
-
-	      $c$: tamaño máximo de disponibilidad de alimentos alternativos.
-
-	      \vspace*{0.5cm}
-
-	      $$\frac{\rho}{n}=\eta_1$$
-
-	      $$\frac{c}{n}=m$$
-
-	      $\eta_1$: crecimiento intríseco dividido por el aporte de las presas al depredador.
-
-	      $m$: impacto de la escacez de presas, en la supervivencia y reproducción de los depredadores.
+	      Esta consideración está basada en la idea de una relación entre la reducción de la población de depredadores y la
+	      disponibilidad per cápita de sus comida favorita. Esta disponibilidad está condicionada por la abundancia de alimentos
+		  y las características medioambientales.
 \end{itemize}
 \vspace*{3cm}
 {\it En \ref*{dz} discrepamos de [1]. Consideramos que Savitri pudo tener un error tipográfico, pues en lo adelante asume nuestra
@@ -341,7 +332,7 @@ $$\left|
 
 Que luego de un poco de trabajo algebraico obtendrías $\textcolor{red}{\lambda_1=\beta-r, \lambda_2=cosa q no entiendo, \lambda_3=\frac{\alpha_1 k(\beta-r)}{r}}$. Por lo que $P_2$ es inestable.
 
-{\it [1] considera este punto estable, diferimos de su resultado}
+	{\it [1] considera este punto estable, diferimos de su resultado}
 
 
 \vspace*{0.5cm}

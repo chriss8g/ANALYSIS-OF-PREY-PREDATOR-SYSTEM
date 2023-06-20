@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1687271601 "/home/christopherwar/Desktop/EDO/DiaposExp/beamer.tex" "beamer.pdf" "beamer" 1687271605
+["pdflatex"] 1687274657 "/home/christopherwar/Desktop/EDO/DiaposExp/beamer.tex" "beamer.pdf" "beamer" 1687274658
   "../numerical_models/images/1.png" 1687271386 88367 acc9abcda075478d12d459fee2ff42b1 ""
   "../numerical_models/images/2.png" 1687271386 82722 21827d16ee0544affcde8286f6b1c6fd ""
   "../numerical_models/images/3.png" 1687271386 77495 01190c46e86626437f5dd257babc691c ""
@@ -16,7 +16,7 @@
   "/home/christopherwar/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecss1095.600pk" 1682801775 21792 9d6799b92476c66e475fe08c62cfe767 ""
   "/home/christopherwar/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecsx1095.600pk" 1682806304 24004 a7c120071d5d2b5efc016a1f5b0f20b6 ""
   "/home/christopherwar/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecsx1440.600pk" 1682803121 34652 0f68b62ec40999dd43c5745b892887ce ""
-  "/home/christopherwar/Desktop/EDO/DiaposExp/beamer.tex" 1687271600 12010 3173ac133bd675ffe7c80ae0c945fd8c ""
+  "/home/christopherwar/Desktop/EDO/DiaposExp/beamer.tex" 1687274656 11979 94b7526cf0b3977d12f46df961f7060b ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecsi0500.tfm" 1136768653 3584 cddc42a948742f3f690b828feeaf2449 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecsi0600.tfm" 1136768653 3584 812f7e2de5681b983f3aeaadd29c79b6 ""
@@ -247,10 +247,10 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1678120696 165012 f177baa1c39a3ebd62c3096a43521a0d ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1687031206 1435855 f44eb2999f6b7efb85d26e55aca7c7a1 ""
-  "beamer.aux" 1687271604 3913 75799bcadc42d92672b728c5369eec81 "pdflatex"
-  "beamer.nav" 1687271604 2225 6ba72cc75f8bd45fe5dff8799df47736 "pdflatex"
-  "beamer.out" 1687271603 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "beamer.tex" 1687271600 12010 3173ac133bd675ffe7c80ae0c945fd8c ""
+  "beamer.aux" 1687274658 3913 75799bcadc42d92672b728c5369eec81 "pdflatex"
+  "beamer.nav" 1687274658 2225 6ba72cc75f8bd45fe5dff8799df47736 "pdflatex"
+  "beamer.out" 1687274657 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "beamer.tex" 1687274656 11979 94b7526cf0b3977d12f46df961f7060b ""
   "beamerthemeIfi.sty" 1687130603 1837 a4c29261222bae611a2e9849fbdeecae ""
   "figures/diapo.jpg" 1687065676 43815 56185ac968ff2c20cb7c35f86f549424 ""
   "figures/present.jpg" 1687131802 101798 635ce418e2bf05a5b670062b58928a6c ""
