@@ -136,8 +136,7 @@ Este artículo constituye un análisis de [1], el cual examina la estabilidad de
 Se analizan los puntos de equilibrio y se realiza una exploración numérica
 para mostrar los resultados. Estos confirman los hallazgos analíticos
 y revelan el comportamiento del modelo, considerando las interacciones entre presas
-jóvenes, adultas y depredadores. Además, se plantea la necesidad de investigar las bifurcaciones
-de Hopf en estudios futuros para comprender mejor el comportamiento global del modelo.
+jóvenes, adultas y depredadores.
 \section{INTRODUCCIóN}
 \label{sec:intro}
 El propósito de este documento es hacer un análisis de [1], artículo elaborado por la especialista analítica Dian Savitri. Fue presentado en el MISEIC(Matematics,
@@ -147,7 +146,7 @@ Factor de impacto del artículo: 0.227, en la fecha de publicación del artícul
 	{\bf Valoración del artículo:} Los autores consideramos que [1] presenta varios errores, tanto tipográfico como de contenidos. Su factor de impacto es
 relativamente bajo. Sin embargo consideramos que se tratan temáticas muy interesantes y de gran utilidad para el desarrollo de la ecología.
 
-{\bf Objetivo del artículo:} Analizar la estabilidad del modelo presa-depredador.
+{\bf Objetivo del artículo:} Analizar la estabilidad de un modelo presa-depredador.
 
 
 El modelo fue construido a partir de dos presas que involucran una estructura de etapa y un depredador. Posee tres equilibrios positivos: el original, la extinción del
@@ -235,7 +234,7 @@ Por otra parte (\ref*{dy}) se refiere a la población de presas adultas.
 
 	\item El proceso de eliminación de presas por los depredadores se describe a partir del modelo Holling Tipo II, que establece:
 
-	      $$\frac{dy}{dt} = -\frac{\eta yz}{y+m}y$$
+	      $$\frac{dy}{dt} = -\frac{\eta yz}{y+m}$$
 
 	      donde:
 
@@ -308,8 +307,8 @@ $$ J(x^*, y^*, z^*) = \left(
 		\end{array}
 	\right)$$
 
-La ecuación característica esta dada pot el $det(J(x^*, y^*, z^*)-I)=0$ donde $(x^*, y^*, z^*)$ es un punto de equilibrio del sistema.
-Nosotros solo analizaremos la estabilidad de los puntos de equilibrio no negativos por la parte real de los eigenvalores de la matriz Jacobiana.
+La ecuación característica esta dada por el $det(J(x^*, y^*, z^*)-I)=0$ donde $(x^*, y^*, z^*)$ es un punto de equilibrio del sistema.
+Nosotros solo analizaremos la estabilidad de los puntos de equilibrio no negativos por la parte real de los valores propios de la matriz Jacobiana.
 \vspace*{0.5cm}
 Para $P_1$ sería:
 $$\left|
@@ -324,7 +323,7 @@ $$\left|
 		afirma, esta matriz se obtiene al sustituir el punto de equilibrio (0, 0, 0).}
 
 
-De ahí que sus eigenvalores están dados por $((-\beta+r)-\lambda)(-\mu-\lambda)(-\lambda)=0$. Pero esta ecuación siempre tiene valor negativo
+De ahí que sus valores propios están dados por $((-\beta+r)-\lambda)(-\mu-\lambda)(-\lambda)=0$. Pero esta ecuación siempre tiene valor negativo
 \textcolor{red}{$\lambda_1=-$}, también si $r<\beta$, pero \textcolor{red}{$\lambda_3=0$}. Por tanto en $P_1$ el sistema es inestable.
 
 \vspace*{0.5cm}
@@ -444,7 +443,7 @@ En el primer conjunto de experimentos se usaron los valores iniciales $[x_0=3.01
 y $[x_0=4.6, y_0=5.9, z_0=3.1]$(1.2).
 
 \begin{figure}[h!]
-	\includegraphics[width=\linewidth]{./images/1.png}
+	\includegraphics[width=\linewidth]{../numerical_models/images/1.png}
 	\caption{Experimento \#1}
 \end{figure}
 
@@ -458,7 +457,7 @@ $[x_0=0.6, y_0=2.4, z_0=3.9]$(2.2) y $[x_0=2.1, y_0=1.2, z_0=1.1]$
 La simulación muestra que todos los valores van al punto de equilibrio interior.
 
 \begin{figure}[h!]
-	\includegraphics[width=\linewidth]{./images/2.png}
+	\includegraphics[width=\linewidth]{../numerical_models/images/2.png}
 	\caption{Experimento \#2}
 \end{figure}
 
@@ -472,7 +471,7 @@ que los valores van al punto de equilibrio.
 	{\it Este experimento difiere del resultado dado por [1]}
 
 \begin{figure}[h!]
-	\includegraphics[width=\linewidth]{./images/3.png}
+	\includegraphics[width=\linewidth]{../numerical_models/images/3.png}
 	\caption{Experimento \#3}
 \end{figure}
 
@@ -484,7 +483,7 @@ Los valores iniciales usados fueron $[x_0=1.2, y_0=2.1, z_0=4.28]$. La simulaci�
 que los valores van al punto de equilibrio.
 
 \begin{figure}[h!]
-	\includegraphics[width=\linewidth]{./images/4.png}
+	\includegraphics[width=\linewidth]{../numerical_models/images/4.png}
 	\caption{Experimento \#4}
 \end{figure}
 
@@ -496,7 +495,7 @@ Los valores iniciales usados fueron $[x_0=1.2, y_0=2.1, z_0=2.4]$. La simulació
 que los valores van al punto de equilibrio.
 
 \begin{figure}[h!]
-	\includegraphics[width=\linewidth]{./images/5.png}
+	\includegraphics[width=\linewidth]{../numerical_models/images/5.png}
 	\caption{Experimento \#5}
 \end{figure}
 
