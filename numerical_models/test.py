@@ -239,6 +239,8 @@ def sixth_experiment():
     ax.set_title('6.4')
     ax.legend(loc='best')
     
+    ax.scatter(0.1194522936,0.1667424272,0.3393851516,'*')
+    # ax.scatter(0.9545454547,7.549586778,0,'*')
     # ax.scatter(x,y,z,'*')
 
     plt.show()
@@ -295,10 +297,10 @@ def EquilibriumPredators(p: Params):
     return (x,y,z)
 
 
-first_experiment()
+# first_experiment()
 # second_experiment()
 # third_experiment()
 # fourth_experiment()
 # fifth_experiment()
-# sixth_experiment()
+sixth_experiment()
 # seventh_experiment()

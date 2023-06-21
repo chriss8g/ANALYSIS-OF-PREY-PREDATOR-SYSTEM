@@ -120,7 +120,7 @@
 	Facultad de Matemática y Computación\\
 	Universidad de La Habana. Cuba\\
 	\and
-	Abel Llerena Domínguez\\[12pt]
+	Abel Llerena Domingo\\[12pt]
 	Grupo C212\\
 	Ciencia de la Computación\\
 	Facultad de Matemática y Computación\\
@@ -141,12 +141,8 @@ jóvenes, adultas y depredadores.
 \label{sec:intro}
 El propósito de este documento es hacer un análisis de [1], artículo elaborado por la especialista analítica Dian Savitri. Fue presentado en el MISEIC(Matematics,
 Informatics, Science and Education International Conference) en 2019 y publicado en Journal of Physics: Conference Series, bajo la licencia de IOP Publishing.
-Factor de impacto del artículo: 0.227, en la fecha de publicación del artículo. Actualmente la revista tiene un factor de impacto de 0.21.
-
-	{\bf Valoración del artículo:} Los autores consideramos que [1] presenta varios errores, tanto tipográfico como de contenidos. Su factor de impacto es
-relativamente bajo. Sin embargo consideramos que se tratan temáticas muy interesantes y de gran utilidad para el desarrollo de la ecología.
-
-{\bf Objetivo del artículo:} Analizar la estabilidad de un modelo presa-depredador.
+Factor de impacto del artículo: 0.227, en la fecha de publicación del artículo. Actualmente la revista tiene un factor de impacto de 0.21. Los autores consideramos que [1] presenta varios errores, tanto tipográfico como de contenidos. Su factor de impacto es
+relativamente bajo. Sin embargo consideramos que se tratan temáticas muy interesantes y de gran utilidad para el desarrollo de la ecología. Nuestro objetivo es analizar la estabilidad de un modelo presa-depredador.
 
 
 El modelo fue construido a partir de dos presas que involucran una estructura de etapa y un depredador. Posee tres equilibrios positivos: el original, la extinción del
@@ -158,8 +154,7 @@ los resultados.
 
 \subsection*{Técnicas utilizadas:}
 \begin{itemize}
-	\item Criterio Routh Hurwitz: consiste en un simple procedimiento o algoritmo para poder determinar si existe alguna raíz o polo en el semiplano derecho del
-	      plano complejo “s”, donde si al menos existe una raíz el sistema es inestable, caso contrario si no hay ninguna raíz en el semiplano derecho el sistema es estable.
+	\item Criterio Routh Hurwitz: consiste en un simple procedimiento para poder determinar si el sistema es inestable.
 	\item Usando python y una implementación computacional del método Runge-Kutta de orden 4 se resolvió el sistema presa-depredador.
 \end{itemize}
 \subsection{Estructura del trabajo}
@@ -204,8 +199,7 @@ Ecuaciones que ilustran el modelo matemático utilizado:
 
 	      \vspace*{0.5cm}
 
-	      Esta primera ecuación representa el modelo de crecimiento poblacional en las
-	      presas jóvenes. Para ello se tuvo en cuenta:
+	      La ecuaci\'on log\'istica es un modelo de crecimiento poblacional que ilustra:
 	      \begin{itemize}
 		      \item La tasa de reproducción es proporcional a la población existente.
 		      \item La tasa de reproducción es proporcional a la cantidad de recursos disponibles.
@@ -263,11 +257,11 @@ Por último (\ref*{dz}) modela la población de depredadores.
 
 	      $\rho$: tasa de crecimiento intrínseco.
 
-	\item El tercer término representa la tasa de mortalidad en el esquema de Leslie Gower.
+	\item El tercer término representa la tasa de mortalidad en el esquema de Leslie-Gower.
 
 	      $\eta_1$: relación del crecimiento intríseco y el factor de conversión de depredación a presa adulta.
 
-	      $m$: pérdida residual de los depredadores.
+	      $m$: pérdida residual de los depredadores debido a la falta de su alimento favorito.
 
 	      Esta consideración está basada en la idea de una relación entre la reducción de la población de depredadores y la
 	      disponibilidad per cápita de sus comida favorita. Esta disponibilidad está condicionada por la abundancia de alimentos
@@ -314,8 +308,8 @@ $$\left|
 		afirma, esta matriz se obtiene al sustituir el punto de equilibrio (0, 0, 0).}
 
 
-De ahí que sus valores propios están dados por $((-\beta+r)-\lambda)(-\mu-\lambda)(-\lambda)=0$. Pero esta ecuación siempre tiene valor negativo
-\textcolor{red}{$\lambda_1=-$}, también si $r<\beta$, pero \textcolor{red}{$\lambda_3=0$}. Por tanto en $P_1$ el sistema es inestable.
+De ahí que sus valores propios están dados por $((-\beta+r)-\lambda)(-\mu-\lambda)(-\lambda)=0$\\
+$\lambda_1=-\beta+r$, $\lambda_2 = -\mu$ y $\lambda_3=0$. Por tanto en $P_1$ el sistema es inestable.
 
 \vspace*{0.5cm}
 
@@ -330,7 +324,7 @@ $$\left|
 
 {\it En la tercera fila, tercera columna, [1] olvida restar $\lambda$, asumimos error tipográfico}
 
-Que luego de un poco de trabajo algebraico obtendrías $\textcolor{red}{\lambda_1=\beta-r, \lambda_2=cosa q no entiendo, \lambda_3=\frac{\alpha_1 k(\beta-r)}{r}}$. Por lo que $P_2$ es inestable.
+Que luego de un poco de trabajo algebraico obtendrías $\lambda_1=\beta-r, \lambda_2=-\mu, \lambda_3=-\frac{\alpha_1 k(\beta-r)}{r}$. Dado que no es posible que $\lambda_1$ y $\lambda_3$ tengan el mismo signo $P_2$ es inestable.
 
 	{\it [1] considera este punto estable, diferimos de su resultado}
 
@@ -396,9 +390,9 @@ las funciones $y$ y $z$. El pseudocódigo sería de la siguiente manera:
 		&m_4 = f_3(t_n + h, x_n + k_3, y_n + l_3, z_n + m_3)\\
 		\\
 		&t[i+1] = t[i] + h\\
-		&x[i+1] = \frac{h}{6}(k_1 + \frac{k_2}{2} + \frac{k_3}{3} + k_4)\\
-		&y[i+1] = \frac{h}{6}(l_1 + \frac{l_2}{2} + \frac{l_3}{3} + l_4)\\
-		&z[i+1] = \frac{h}{6}(m_1 + \frac{m_2}{2} + \frac{m_3}{3} + m_4)\\
+		&x[i+1] = \frac{h}{6}(k_1 + k_2 \cdot 2 + k_3 \cdot 2 + k_4)\\
+		&y[i+1] = \frac{h}{6}(l_1 + l_2 \cdot 2 + l_3 \cdot 2 + l_4)\\
+		&z[i+1] = \frac{h}{6}(m_1 + m_2 \cdot 2 + m_3 \cdot 2 + m_4)\\
 	\end{split}
 \end{equation*}
 \singlespacing
@@ -514,7 +508,29 @@ naturaleza.
 \ [1]\ {D. Savitri, Stability and Numerical Simulation of Prey-predator System with Holling
 Type-II Functional Responses for Adult Prey}.
 
-\ [2]\ {L. Gauer esa}
+\ [2]\ {Castellanos V and Chan-Lopez R 2017 Existence of Limit cycles in a tree level trophic chain with
+Lotka-Volterra and Holling type II functional responses Chaos}
+
+{\bf \Large Bibliografía}
+\begin{itemize}
+	\item Holling C S 1965 The Functional Response of Predators to Prey Density and its Role in Mimicry
+	and Population Regulation Memoirs of the Entomological Society of Canada 97(S45) 5–60.
+	https://doi.org/10.4039/entm9745
+	\item Khajanchi S 2014 Dynamic behavior of a Beddington-DeAngelis type stage structure predator-
+	prey model Applied Mathematics and Computation.
+	\item Xiao D and Li W 2000 Limit cycles for The Competitive Three Dimensional Lotka Volterra System
+	Journal of Differential Equations.
+	\item Hofbauer J 1981 On the occurrence of limit cycle in the Lotka-Volterra equation Nonlinear
+	Analysis.
+	\item Falconi, Huenchucona M, and Vidal C 2015 Stability and global dynamic of stage-structured
+	predator-prey model with group defense mechanism of the prey Journal Applied Mathematics and
+	Computation.
+	\item Savitri D and Abadi 2018 Numerical Simulation in Prey-Predator Model with a structure for prey
+	Atlantis Highlights in Engineering.
+	\item Liu S, Chen L, and Liu Z 2002 Extinction and permanence in nonautonomous competitive system
+	with stage structure.
+\end{itemize}
+
 
 
 \end{document}
