@@ -1,12 +1,12 @@
 # Fdb version 3
-["pdflatex"] 1687293217 "/home/christopherwar/Desktop/EDO/Plantiila LateX para el informe/ficheroprincipal.tex" "ficheroprincipal.pdf" "ficheroprincipal" 1687293218
+["pdflatex"] 1687322345 "/home/christopherwar/Desktop/EDO/Plantiila LateX para el informe/ficheroprincipal.tex" "ficheroprincipal.pdf" "ficheroprincipal" 1687322347
   "../numerical_models/images/1.png" 1687271386 88367 acc9abcda075478d12d459fee2ff42b1 ""
   "../numerical_models/images/2.png" 1687271386 82722 21827d16ee0544affcde8286f6b1c6fd ""
   "../numerical_models/images/3.png" 1687271386 77495 01190c46e86626437f5dd257babc691c ""
   "../numerical_models/images/4.png" 1687271386 101404 26eb6b0ee7cc86456326ffd17e9d7ed8 ""
   "../numerical_models/images/5.png" 1687271386 104203 7871750b4362a0f8b010411ff485ee97 ""
   "/etc/texmf/web2c/texmf.cnf" 1660509479 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/christopherwar/Desktop/EDO/Plantiila LateX para el informe/ficheroprincipal.tex" 1687293217 20970 a75dc7e3f411e8f04d07923f722dd7a3 ""
+  "/home/christopherwar/Desktop/EDO/Plantiila LateX para el informe/ficheroprincipal.tex" 1687322180 21920 093b97cfc133dcb2be1872eeae9ced38 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -120,9 +120,9 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1678120696 165012 f177baa1c39a3ebd62c3096a43521a0d ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1687031206 1435855 f44eb2999f6b7efb85d26e55aca7c7a1 ""
   "fancyhdr.sty" 1677054356 20514 2bd550bb88e76551806d7a82e671f42d ""
-  "ficheroprincipal.aux" 1687293218 1929 426dcd252c7018807a917291da9828cb "pdflatex"
-  "ficheroprincipal.out" 1687293218 450 1d6bf129341bbd52ebd14e5e7ea326e5 "pdflatex"
-  "ficheroprincipal.tex" 1687293217 20970 a75dc7e3f411e8f04d07923f722dd7a3 ""
+  "ficheroprincipal.aux" 1687322347 1929 d70610ee95b0c1b6620b8a90174e1bf0 "pdflatex"
+  "ficheroprincipal.out" 1687322347 450 1d6bf129341bbd52ebd14e5e7ea326e5 "pdflatex"
+  "ficheroprincipal.tex" 1687322180 21920 093b97cfc133dcb2be1872eeae9ced38 ""
   "wsc.sty" 1677054356 15046 1e7f2019ad6e594a23fd9ba0aed29387 ""
   "wscbib.tex" 1687062240 4532 fbf69177c8c97c118d41ecb0dce98e43 ""
   "wscpaperproc.cls" 1677054356 742 d25f0337f8c97714eab29f444c7e8ef2 ""
