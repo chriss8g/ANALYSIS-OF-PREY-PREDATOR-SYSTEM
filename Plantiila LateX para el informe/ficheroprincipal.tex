@@ -1,25 +1,12 @@
-%**************************************************************************
-%*
-%*  Instrucciones para la platilla del informe final
-%*
-%*  
-%*
-%*  Filename: platillapaper.tex
-%*
-%*
-%*  
-%*  
-%*
-%**************************************************************************
-
-
 \documentclass{wscpaperproc}
-\usepackage[spanish, activeacute]{babel}
+% \usepackage[spanish, activeacute]{babel}
 \usepackage{latexsym}
 %\usepackage{caption}
 \usepackage{graphicx}
 \usepackage{mathptmx}
 \usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{setspace}
 
 %
 %****************************************************************************
@@ -97,14 +84,17 @@
 %               Please list ALL authors using last name only, separate by a comma except
 %               for the last author, separate with "and"
 %
-\WSCpagesetup{LastName1, LastName2, LastName3, LastName4, and LastName (LastAuthor)}
+\WSCpagesetup{Álvarez, Cordero, Díaz, Guerra, and Llerena}
+% \pagestyle{myheadings}
+% \markright{Álvarez, Cordero, Díaz, Guerra, and Llerena}
 
 % AUTHOR: Enter the title, all letters in upper case
 \title{Análisis de {\it Stability and Numerical Simulation of Prey-predator System with Holling
-Type-II Functional Responses for Adult Prey}}
+			Type-II Functional Responses for Adult Prey} [1]}
 
 % AUTHOR: Enter the authors of the article, see end of the example document for further examples
-\author{Abel LLerena Domínguez\\[12pt]
+\author{
+	Pedro Pablo Álvarez Portelles\\[12pt]
 	Grupo C212\\
 	Ciencia de la Computación\\
 	Facultad de Matemática y Computación\\
@@ -118,19 +108,19 @@ Type-II Functional Responses for Adult Prey}}
 	Facultad de Matemática y Computación\\
 	Universidad de La Habana. Cuba\\
 	\and
-	Christopher Guerra Herrero\\[12pt]
-	Grupo C212\\
-	Ciencia de la Computación\\
-	Facultad de Matemática y Computación\\
-	Universidad de La Habana. Cuba\\
-	\and
 	Marlon Díaz Pérez\\[12pt]
 	Grupo C212\\
 	Ciencia de la Computación\\
 	Facultad de Matemática y Computación\\
 	Universidad de La Habana. Cuba\\
 	\and
-	Pedro Pablo Álvarez Portelles\\[12pt]
+	Christopher Guerra Herrero\\[12pt]
+	Grupo C212\\
+	Ciencia de la Computación\\
+	Facultad de Matemática y Computación\\
+	Universidad de La Habana. Cuba\\
+	\and
+	Abel Llerena Domingo\\[12pt]
 	Grupo C212\\
 	Ciencia de la Computación\\
 	Facultad de Matemática y Computación\\
@@ -140,130 +130,407 @@ Type-II Functional Responses for Adult Prey}}
 
 
 \maketitle
-\section*{Tareas a realizar}
-En el Informe debe Presentar:
-\begin{itemize}
-	\item Informe de la Tarea Investigativa II. T\'itulo del art\'iculo analizado
-	\item Autores del trabajo.
-	\item Resumen del trabajo.
-	\item Intoducción del trabajo debe de mensional, los autores del art\'iculo analizado, la revista donde se publicó. A\~no. Factor de impacto de la revista. Valoración del art\'iculo: Explicación sobre lo que trata el art\'iculo, problemática que se propone resolver, t\'ecnicas utilizadas.
-	\item Otro ep\'igrafe para presentar las ecuaciones que ilustran el modelo matemático utilizado. Condiciones iniciales o de frontera. Resultados a los que arriban. Ejemplos num\'ericos: Reproducción de los algunos de los ejemplos o experimentos num\'ericos que se expliquen en el art\'iculo, utilizando para ello (RK4/Euler expl\'icito o impl\'icito) estudiado en clases y comparar resultados. Buscar puntos de equilibrio en caso de existir y analizar la estabilidad de dichos puntos. Pueden usarse para ello recursos computacionales. Presentar el diagrama de fases entre un par variables incógnitas, valorando su comportamiento.
-	\item Conclusiones: Una valoración de lo que usted ha aprendido con este trabajo, como valora la posibilidad de que se pueda continuar esta l\'inea de investigación.
-	\item Bibliograf\'ia Consultada.
-	\item  Anexos: Incluir seudo códigos de sus programas.
-	\item Valoraremos las iniciativas que presenten, como pueden ser, interfaces gráficas, bases de datos, elementos  vinculen con otras asignaturas de la especialidad.
-\end{itemize}
 
-\section*{Estructura de la platilla}
 \section*{Resumen}
-Aqu\'i va el resumen del trabajo en esta plantilla  \LaTeX\
-
+Este artículo constituye un análisis de [1], el cual examina la estabilidad de un modelo de presa-depredador.
+Se analizan los puntos de equilibrio y se realiza una exploración numérica
+para mostrar los resultados. Estos confirman los hallazgos analíticos
+y revelan el comportamiento del modelo, considerando las interacciones entre presas
+jóvenes, adultas y depredadores.
 \section{INTRODUCCIóN}
 \label{sec:intro}
-Aqu\'i va la introduccón del trabajo en esta plantilla  \LaTeX\
+El propósito de este documento es hacer un análisis de [1], artículo elaborado por la especialista analítica Dian Savitri. Fue presentado en el MISEIC(Matematics,
+Informatics, Science and Education International Conference) en 2019 y publicado en Journal of Physics: Conference Series, bajo la licencia de IOP Publishing.
+Factor de impacto del artículo: 0.227, en la fecha de publicación del artículo. Actualmente la revista tiene un factor de impacto de 0.21. Los autores consideramos que [1] presenta varios errores, tanto tipográfico como de contenidos. Su factor de impacto es
+relativamente bajo. Sin embargo consideramos que se tratan temáticas muy interesantes y de gran utilidad para el desarrollo de la ecología. Nuestro objetivo es analizar la estabilidad de un modelo presa-depredador.
+
+
+El modelo fue construido a partir de dos presas que involucran una estructura de etapa y un depredador. Posee tres equilibrios positivos: el original, la extinción del
+depredador y un punto interior. El artículo hace un estudio de la dinámica
+del comportamiento de las interacciones presa-depredador, con la función de respuesta Holling tipo II(esta respuesta funcional se
+refiere al cambio en el comportamiento de los individuos en función de la densidad del huésped o presa) para presas adultas. El apartado considera la estabilidad de
+los equilibrios en detalle con las condiciones de existencia e ilustra la estabilidad local de los equilibrios, además cuenta con simulaciones numéricas para ilustrar
+los resultados.
+
+\subsection*{Técnicas utilizadas:}
+\begin{itemize}
+	\item Criterio Routh Hurwitz: consiste en un simple procedimiento para poder determinar si el sistema es inestable.
+	\item Usando python y una implementación computacional del método Runge-Kutta de orden 4 se resolvió el sistema presa-depredador.
+\end{itemize}
 \subsection{Estructura del trabajo}
+\begin{itemize}
+	\item Modelo matemático
+	\item Análisis de los puntos de equilibrio
+	\item Simulaciones numéricas
+\end{itemize}
 
 \section{Resultados fundamentales.}
 
-Muestre sólo las ecuaciones más importantes y numere \'unicamente las ecuaciones mostradas a las que se hace referencia expl\'icita en el texto. \\
 
-$\bar Y = n^{-1} \sum_{i=1}^n Y_i$\\
-$$s^2 = \frac 1 {n-1} \sum_{i=1}^n (Y_i - \bar Y)^2.$$
+Ecuaciones que ilustran el modelo matemático utilizado:
 
-\[
-	c^2=a^2+b^2
-\]
-
-\begin{equation}\label{eq:quadratic}
-	ax^2 + bx + c = 0, \mbox{ donde } a \ne 0.
-\end{equation}
-
-En el texto, cada referencia a un n\'umero de ecuación debe ir tambi\'en entre par\'entesis. Por ejemplo, la solución de (\ref{eq:quadratic}) está dada por  (\ref{eq:quadraticsol}) en los Axenos \ref{app:quadratic}.
+\begin{eqnarray}\label{dx}
+	\frac{dx}{dt} &=& rx(1-\frac{x}{k})-\beta x-\alpha xz
+\end{eqnarray}
+\begin{eqnarray}\label{dy}
+	\frac{dy}{dt} &=& \beta x-\frac{\eta yz}{y+m}-\mu y
+\end{eqnarray}
+\begin{eqnarray}\label{dz}
+	\frac{dz}{dt} &=& \alpha_1 xz+\rho z^2-\frac{\eta_1z^2}{y+m}
+\end{eqnarray}
 
 
-\begin{equation} \label{eq:quadratic_second}
-	ax^2 + bx + c = 0
-\end{equation}
 
-\subsubsection{M\'etodos y algoritmos utilizados}
-Esta  subsección se describen los códigos de programas utilizados en el trabajo mediante las siguiente instrucciones.
+\vspace*{1cm}
 
-\begin{verbatim}
-y_{n+1}=y_n+hf(x_n,y_n}
-\end{verbatim}
+{\bf Ecuación \ref*{dx}}
+\begin{itemize}
+	\item El término $rx(1-\frac{x}{k})$ de (\ref*{dx}) es conocido como ecuación
+	      logística y se compone por:
+	      \vspace*{0.3cm}
 
+	      $x$: población de presas juveniles.
+
+	      $t$: tiempo.
+
+	      $r$: constante que define la tasa de crecimiento.
+
+	      $k$: capacidad de carga o persistencia.
+
+	      \vspace*{0.5cm}
+
+	      La ecuaci\'on log\'istica es un modelo de crecimiento poblacional que ilustra:
+	      \begin{itemize}
+		      \item La tasa de reproducción es proporcional a la población existente.
+		      \item La tasa de reproducción es proporcional a la cantidad de recursos disponibles.
+		      \item La competición por los recursos disponibles tiende a limitar el crecimiento poblacional.
+	      \end{itemize}
+
+	\item $\beta x$ representa las presas que se vuelven adultas.
+
+	      \vspace*{0.3cm}
+
+	      $\beta$: factor de conversión de presa joven a presa adulta
+
+	      \vspace*{0.3cm}
+
+	\item La velocidad con que varía la población de presas $x$ es proporcional al número de encuentros con los depredadores $z$ según la ecuación de Lotka-Volterra:
+	      $$\frac{dx}{dt}=\alpha xz$$
+	      $\alpha$: tasa de eliminación de presas por parte de los depredadores.
+\end{itemize}
+
+\vspace*{1cm}
+{\bf Ecuación \ref*{dy}}
+Por otra parte (\ref*{dy}) se refiere a la población de presas adultas.
 
 \begin{itemize}
-	\item Utilice vi\~netas estándar en lugar de tildes, flechas, etc.
+	\item El primer término de la ecuación ya fue analizado anteriormente, es la cantidad de presas jóvenes que se convierten en adultas.
+
+	\item El proceso de eliminación de presas por los depredadores se describe a partir del modelo Holling Tipo II, que establece:
+
+	      $$\frac{dy}{dt} = -\frac{\eta yz}{y+m}$$
+
+	      donde:
+
+	      $\eta$: valor máximo de la tasa de reducción per cápita de presas adultas debido a los depredadores.
+
+	      $m$: coeficiente de protección ambiental para las presas adultas.
+
+	\item Además se considera las presas que mueren de forma natural $\mu y$.
+
+	      $\mu$: tasa de mortalidad en presas adultas.
 \end{itemize}
-\begin{enumerate}
-	\item En las listas numeradas, las etiquetas no deben ser n\'umeros arábigos encerrados entre par\'entesis, \cite{simulation}
-\end{enumerate}
+
+\vspace*{1cm}
+{\bf Ecuación \ref*{dz}}
+Por último (\ref*{dz}) modela la población de depredadores.
+
+\begin{itemize}
+	\item $\alpha_1 xz$ responde al modelo de Lotka-Volterra. Esta ecuación representa que el crecimiento de los depredadores es
+	      proporcional a la caza de presas juveniles.
+
+	      $\alpha_1$: tasa de crecimiento de los depredadores debido a la caza de presas juveniles.
+
+	      \vspace*{0.3cm}
+
+	\item $\rho z^2$ es el crecimiento intrínseco.
+
+	      $\rho$: tasa de crecimiento intrínseco.
+
+	\item El tercer término representa la tasa de mortalidad en el esquema de Leslie-Gower.
+
+	      $\eta_1$: relación del crecimiento intríseco y el factor de conversión de depredación a presa adulta.
+
+	      $m$: pérdida residual de los depredadores debido a la falta de su alimento favorito.
+
+	      Esta consideración está basada en la idea de una relación entre la reducción de la población de depredadores y la
+	      disponibilidad per cápita de sus comida favorita. Esta disponibilidad está condicionada por la abundancia de alimentos
+		  y las características medioambientales.
+\end{itemize}
+\vspace*{3cm}
+{\it En \ref*{dz} discrepamos de [1]. Consideramos que Savitri pudo tener un error tipográfico, pues en lo adelante asume nuestra
+ecuación, además [2] defiende este modelo.}
+
+\section*{Análisis de los puntos de equilibrio y su estabilidad}
+
+Los puntos de equilibrio para este sistema son aquellos que satisfacen:
+$$\frac{dx}{dt}=\frac{dy}{dt}=\frac{dz}{dt}=0$$
+
+Estos puntos son:
+\begin{itemize}
+	\item $P_1=(0, 0, 0)$
+	\item $P_2=(\frac{k(r-\beta)}{r}, \frac{\beta k(r-\beta)}{\mu r}, 0)$
+	\item $P_3=(x_3, y_3, z_3)$
+\end{itemize}
+
+La estabilidad de los puntos de equilibrio se puede analizar calculanfo la matriz Jacobiana. Para nuestro sistema sería:
+$$ J(x^*, y^*, z^*) = \left(
+	\begin{array}{ccc}
+			r-\frac{2rx}{k}-\beta-\alpha z & 0                                       & -\alpha x                       \\
+			\beta                          & \frac{-nz}{y+m}+\frac{nyz}{(y+m)^2}-\mu & \frac{-ny}{y+m}                 \\
+			\alpha_1z                      & \frac{n_1z^2}{(y+m)^2}                  & 2\rho z-\frac{2n_1z}{y+m}+\alpha_1x
+		\end{array}
+	\right)$$
+
+La ecuación característica esta dada por el $det(J(x^*, y^*, z^*)-I)=0$ donde $(x^*, y^*, z^*)$ es un punto de equilibrio del sistema.
+Nosotros solo analizaremos la estabilidad de los puntos de equilibrio no negativos por la parte real de los valores propios de la matriz Jacobiana.
+\vspace*{0.5cm}
+Para $P_1$ sería:
+$$\left|
+	\begin{array}{ccc}
+		(-\beta+r)-\lambda & 0            & 0        \\
+		\beta              & -\mu-\lambda & 0        \\
+		0                  & 0            & -\lambda
+	\end{array}
+	\right| =0$$
+
+{\it En este punto, [1] se refiere a $-1+r$ donde nosotros a $-\beta+r$. Consideramos que haya sido un error tipográfico, pues como bien ella
+		afirma, esta matriz se obtiene al sustituir el punto de equilibrio (0, 0, 0).}
 
 
-\begin{table}[htb]
-	\centering
-	\caption{Uso de tabla\label{tab: first}}
-	\begin{tabular}{rll}
-		\hline
-		- & IQ & Dieta          \\ \hline
-		- & 70 & Cualquier cosa \\
-		- & 60 & -              \\
-		\hline
-	\end{tabular}
-\end{table}
+De ahí que sus valores propios están dados por $((-\beta+r)-\lambda)(-\mu-\lambda)(-\lambda)=0$\\
+$\lambda_1=-\beta+r$, $\lambda_2 = -\mu$ y $\lambda_3=0$. Por tanto en $P_1$ el sistema es inestable.
 
-%\begin{figure}[htb]
-%{
-%\centering
-%%\includegraphics[width=0.9\columnwidth]{MathExpandExpression.jpg}
-%\includegraphics[width=0.50\textwidth]{alg_rk4}
-%\caption{Figura-I.\label{fig: tahi}}
-%}
-%\end{figure}
+\vspace*{0.5cm}
 
-.
-\begin{definition}
+Para $P_2$ sería:
+$$\left|
+	\begin{array}{ccc}
+		(\beta-r)-\lambda & 0            & \frac{\alpha k(\beta-r)}{r}                                      \\
+		\beta             & -\mu-\lambda & \frac{n\beta k(\beta-r)}{r\mu (\frac{\beta k(r-\beta)}{r\mu}+m)} \\
+		0                 & 0            & -\frac{\alpha_1 k(\beta-r)}{r}-\lambda
+	\end{array}
+	\right| =0$$
 
-\end{definition}
+{\it En la tercera fila, tercera columna, [1] olvida restar $\lambda$, asumimos error tipográfico}
 
-\begin{theorem}
+Que luego de un poco de trabajo algebraico obtendrías $\lambda_1=\beta-r, \lambda_2=-\mu, \lambda_3=-\frac{\alpha_1 k(\beta-r)}{r}$. Dado que no es posible que $\lambda_1$ y $\lambda_3$ tengan el mismo signo $P_2$ es inestable.
 
-\end{theorem}
-
-\begin{corollary}
-
-\end{corollary}
-
-.
+	{\it [1] considera este punto estable, diferimos de su resultado}
 
 
+\vspace*{0.5cm}
 
-	{\footnotesize
-		\begin{hangref}
-			\item Banks, J., J. S. Carson, B. L. Nelson, and D. M. Nicol. 2000. \textit{Discrete-Event System Simulation}. 3rd ed. Upper Saddle River, New Jersey: Prentice-Hall, Inc.
-		\end{hangref}
-	}
+En el caso $P_3$ sería:
+$$ J(x_3, y_3, z_3) = \left(
+	\begin{array}{ccc}
+			r-\frac{2rx_3}{k}-\beta-\alpha z_3 & 0                                                 & -\alpha x_3                             \\
+			\beta                              & \frac{-nz_3}{y_3+m}+\frac{ny_3z_3}{(y_3+m)^2}-\mu & \frac{-ny_3}{y_3+m}                     \\
+			\alpha_1z_3                        & \frac{n_1z_3^2}{(y_3+m)^2}                        & 2pz_3-\frac{2n_1z_3}{y_3+m}+\alpha_1x_3
+		\end{array}
+	\right)$$
+
+La ecuación característica entonces es de la forma:
+$$\lambda^3+\gamma_1\lambda^2+\gamma_2\lambda+\gamma_3=0 $$
+
+{\it Aquí [1] trabaja con $\lambda^2-\ traza\ \lambda+\ deteminante$, esto no es aplicable para sistemas mayores que dos, ni
+es resultado de simplificación alguna}
+
+Si usamos el criterio Routh-Hurwitz para analizar la estabilidad en $P_3$ veremos que este
+tiene una parte real negativa si y solo si $\gamma_1>0, \gamma_3>0$ y $\gamma_1\gamma_2-\gamma_3>0$, la coexistencia en $P_3$ es local
+y asintóticamente estable.
+
+\vspace*{3cm}
+
+
+\section*{Métodos y algoritmos utilizados}
+
+
+\subsection*{Ejemplos Numéricos. Reproducción de los experimentos}
+
+Para reproducir los experimentos se utilizó el método de Runge-Kutta de orden 4 (RK4), programado
+en Python 3.10 y haciendo uso de librerías para la manipulación eficiente de vectores como Numpy y
+Scipy.
+
+El metodo de Runge-Kutta es método de un paso en el cual se usa un tamaño de paso $h$ para calcular
+los siguientes valores a partir de valores previos.
+
+Como en este trabajo se utiliza un sistema de tres ecuaciones,
+es necesario de manera análoga crear otras variables $l$ y $m$ para
+las funciones $y$ y $z$. El pseudocódigo sería de la siguiente manera:
+
+
+\doublespacing
+\begin{equation*}
+	\begin{split}
+		for\ i=0\ to\ n - 1:\\
+		&xn = x[i];yn = y[i];zn = z[i]\\
+		\\
+		&k_1 = f_1(t_n, x_n, y_n, z_n)\\
+		&l_1 = f_2(t_n, x_n, y_n, z_n)\\
+		&m_1 = f_3(t_n, x_n, y_n, z_n)\\
+		&k_2 = f_1(t_n + \frac{h}{2}, x_n + \frac{k_1}{2}, y_n + \frac{l_1}{2}, z_n + \frac{m_1}{2})\\
+		&l_2 = f_2(t_n + \frac{h}{2}, x_n + \frac{k_1}{2}, y_n + \frac{l_1}{2}, z_n + \frac{m_1}{2})\\
+		&m_2 = f_3(t_n + \frac{h}{2}, x_n + \frac{k_1}{2}, y_n + \frac{l_1}{2}, z_n + \frac{m_1}{2})\\
+		&k_3 = f_1(t_n + \frac{h}{2}, x_n + \frac{k_2}{2}, y_n + \frac{l_2}{2}, z_n + \frac{m_2}{2})\\
+		&l_3 = f_2(t_n + \frac{h}{2}, x_n + \frac{k_2}{2}, y_n + \frac{l_2}{2}, z_n + \frac{m_2}{2})\\
+		&m_3 = f_3(t_n + \frac{h}{2}, x_n + \frac{k_2}{2}, y_n + \frac{l_2}{2}, z_n + \frac{m_2}{2})\\
+		&k_4 = f_1(t_n + h, x_n + k_3, y_n + l_3, z_n + m_3)\\
+		&l_4 = f_2(t_n + h, x_n + k_3, y_n + l_3, z_n + m_3)\\
+		&m_4 = f_3(t_n + h, x_n + k_3, y_n + l_3, z_n + m_3)\\
+		\\
+		&t[i+1] = t[i] + h\\
+		&x[i+1] = \frac{h}{6}(k_1 + k_2 \cdot 2 + k_3 \cdot 2 + k_4)\\
+		&y[i+1] = \frac{h}{6}(l_1 + l_2 \cdot 2 + l_3 \cdot 2 + l_4)\\
+		&z[i+1] = \frac{h}{6}(m_1 + m_2 \cdot 2 + m_3 \cdot 2 + m_4)\\
+	\end{split}
+\end{equation*}
+\singlespacing
+
+El tamaño de paso se estableció para todos los experimentos en
+$h=2^{-10}$ con el cual se obtienen resultados muy exactos teniendo
+en cuenta que el error de RK4 es del orden $O(h^5)$, con lo que tendriamos
+que el error sería aproximadamente del orden de $e \approx 2^{-50}$.
+
+\subsection*{Reproducción de los experimentos}
+
+Para los experimentos se utilizaron para los parámetros los valores de la siguiente tabla:
+
+\begin{tabular}{p{1cm} | p{1cm} | p{1cm} | p{1cm} | p{1cm} | p{1cm} | p{1cm} | p{1cm} | p{1cm} }
+	% aslask & gahbh
+	$\#$ & $r$  & $\alpha$ & $\alpha_1$ & $\eta$ & $\eta_1$ & $K$  & $\rho$ & $m$  \\
+	1    & 0.82 & 1.56     & 1.12       & 2.41   & 1.83     & 12.0 & 1.38   & 0.13 \\
+	2    & 1.32 & 1.56     & 0.72       & 2.41   & 0.41     & 2.8  & 1.38   & 0.23 \\
+	3    & 1.32 & 0.76     & 0.72       & 0.6    & 0.41     & 2.8  & 0.78   & 0.23 \\
+	4    & 0.82 & 0.76     & 0.72       & 1.2    & 0.41     & 2.8  & 1.38   & 0.23 \\
+	5    & 1.32 & 1.16     & 0.72       & 0.31   & 0.41     & 2.8  & 0.78   & 0.23 \\
+\end{tabular}
+\\
+
+Además, se usó fijo $\beta=0.87$ y $\mu=0.11$.
+
+	{\it note que [1] da dos interpretaciones diferentes para la variable $m$, sin embargo ambos conceptos se simulan con igual magnitud}
+
+\vspace*{0.5cm}
+{\bf Primer experimento}
+
+En el primer conjunto de experimentos se usaron los valores iniciales $[x_0=3.01, y_0=5.05, z_0=4.28]$ (1.1)
+y $[x_0=4.6, y_0=5.9, z_0=3.1]$(1.2).
+
+\begin{figure}[h!]
+	\includegraphics[width=\linewidth]{../numerical_models/images/1.png}
+	\caption{Experimento \#1}
+\end{figure}
+
+\vspace*{7cm}
+{\bf Segundo experimento}
+
+En el segundo conjunto de experimentos, se usaron valores tal que $\eta > \beta$ y $\eta > \alpha$.
+De valores iniciales se utilizaron $[x_0=0.3, y_0=2.4, z_0=3.9]$(2.1),
+$[x_0=0.6, y_0=2.4, z_0=3.9]$(2.2) y $[x_0=2.1, y_0=1.2, z_0=1.1]$
+
+La simulación muestra que todos los valores van al punto de equilibrio interior.
+
+\begin{figure}[h!]
+	\includegraphics[width=\linewidth]{../numerical_models/images/2.png}
+	\caption{Experimento \#2}
+\end{figure}
+
+\vspace*{4cm}
+{\bf Tercer experimento}
+
+En el tercer experimento, se usaron valores tal que $\alpha > \beta$
+Los valores iniciales usados fueron $[x_0=0.3, y_0=2.4, z_0=3.9]$. La simulación muestra
+que los valores van al punto de equilibrio.
+
+	{\it Este experimento difiere del resultado dado por [1]}
+
+\begin{figure}[h!]
+	\includegraphics[width=\linewidth]{../numerical_models/images/3.png}
+	\caption{Experimento \#3}
+\end{figure}
+
+\vspace*{7cm}
+{\bf Cuarto experimento}
+
+En el cuarto experimento, se usaron valores tal que $\eta = \alpha$.
+Los valores iniciales usados fueron $[x_0=1.2, y_0=2.1, z_0=4.28]$. La simulación muestra
+que los valores van al punto de equilibrio.
+
+\begin{figure}[h!]
+	\includegraphics[width=\linewidth]{../numerical_models/images/4.png}
+	\caption{Experimento \#4}
+\end{figure}
+
+\vspace*{7cm}
+{\bf Quinto experimento}
+
+En el quinto experimento, se usaron valores tal que $\eta > \beta$ y $\eta > \alpha$.
+Los valores iniciales usados fueron $[x_0=1.2, y_0=2.1, z_0=2.4]$. La simulación muestra
+que los valores van al punto de equilibrio.
+
+\begin{figure}[h!]
+	\includegraphics[width=\linewidth]{../numerical_models/images/5.png}
+	\caption{Experimento \#5}
+\end{figure}
+
+\vspace*{4cm}
 
 
 
 
-\bibliographystyle{wsc}
-\bibliography{demobib}
+\section*{Conclusiones}
+
+Este estudio ha examinado la estabilidad de un modelo de interacción presa-depredador con estructura
+de etapas en las poblaciones de presas. Se han identificado y analizado los puntos de equilibrio,
+encontrando tres equilibrios positivos: el inicial, la extinción del depredador y el punto interior.
+Se ha demostrado que el punto interior es localmente estable bajo ciertas condiciones. Las simulaciones
+numéricas han respaldado los resultados analíticos, proporcionando evidencia adicional del comportamiento
+del modelo. Estos hallazgos contribuyen a mejorar nuestra comprensión de los sistemas ecológicos. Esta línea de trabajo
+podría continuar estudiando los términos que componen el modelo para lograr un mayor ajuste a la realidad de la
+naturaleza.
 
 
+\vspace*{3cm}
 
+{\bf \Large Referencias}
 
-\section*{Agradciemientos}
+\ [1]\ {D. Savitri, Stability and Numerical Simulation of Prey-predator System with Holling
+Type-II Functional Responses for Adult Prey}.
 
+\ [2]\ {Castellanos V and Chan-Lopez R 2017 Existence of Limit cycles in a tree level trophic chain with
+Lotka-Volterra and Holling type II functional responses Chaos}
 
-\appendix
+{\bf \Large Bibliografía}
+\begin{itemize}
+	\item Holling C S 1965 The Functional Response of Predators to Prey Density and its Role in Mimicry
+	and Population Regulation Memoirs of the Entomological Society of Canada 97(S45) 5–60.
+	https://doi.org/10.4039/entm9745
+	\item Khajanchi S 2014 Dynamic behavior of a Beddington-DeAngelis type stage structure predator-
+	prey model Applied Mathematics and Computation.
+	\item Xiao D and Li W 2000 Limit cycles for The Competitive Three Dimensional Lotka Volterra System
+	Journal of Differential Equations.
+	\item Hofbauer J 1981 On the occurrence of limit cycle in the Lotka-Volterra equation Nonlinear
+	Analysis.
+	\item Falconi, Huenchucona M, and Vidal C 2015 Stability and global dynamic of stage-structured
+	predator-prey model with group defense mechanism of the prey Journal Applied Mathematics and
+	Computation.
+	\item Savitri D and Abadi 2018 Numerical Simulation in Prey-Predator Model with a structure for prey
+	Atlantis Highlights in Engineering.
+	\item Liu S, Chen L, and Liu Z 2002 Extinction and permanence in nonautonomous competitive system
+	with stage structure.
+\end{itemize}
 
-\section{Anexos} \label{app:quadratic}
-
-\begin{equation} \label{eq:quadraticsol}
-	x = \frac{-b \pm \sqrt{b^2-4ac}}{2a} \mbox{ si } a \ne 0.
-\end{equation}
 
 
 \end{document}
