@@ -7,24 +7,6 @@ from collections import namedtuple
 
 from methods.rk4 import runge_kutta_default, Params
 
-# Definir los parametros de las funciones(beta, alfa, etc...)
-#            r    beta  alfa  alfa1   n      n1    k    rho   m     miu
-p1 = Params(0.82, 0.87, 1.56, 1.12, 2.41,   1.83, 12.0, 1.38, 0.13, 0.11)  # Primer set de experimentos
-p2 = Params(1.32, 0.87, 1.56, 0.72, 2.41,   0.41, 2.8, 1.38, 0.23, 0.11)  # Segundo set de experimentos
-p3 = Params(1.32, 0.87, 0.76, 0.72, 0.6,    0.41, 2.8, 0.78, 0.23, 0.11)  # Tercer set de experimentos
-p4 = Params(0.82, 0.87, 0.76, 0.72, 1.2,    0.41, 2.8, 1.38, 0.23, 0.11)  # Cuarto set de experimentos
-p5 = Params(1.32, 0.87, 1.16, 0.72, 0.3095, 0.41, 2.8, 0.78, 0.23, 0.11)  # Quinto set de experimentos
-p6 = Params(1.32, 0.87, 1.16, 1.16, 0.3,    0.41, 2.8, 0.78, 0.23, 0.11)  # Sexto set de experimentos
-
-#Parametros originales de la tabla
-# p1 = Params(0.82,0.87,1.56,1.12,2.41,1.83,12,1.38,0.13,0.11)  # Primer set de experimentos
-# p2 = Params(1.32,0.87,1.16,0.72,1.6,0.41,2.8,0.78,0.23,0.11)  # Segundo set de experimentos
-# p3 = Params(1.32,0.87,0.76,0.72,0.6,0.41,2.8,0.78,0.23,0.11)  # Tercer set de experimentos
-# p4 = Params(1.32,0.87,1.16,0.72,1.2,0.41,2.8,0.78,0.23,0.11)  # Cuarto set de experimentos
-# p5 = Params(1.32,0.87,1.16,0.72, 0.3095, 0.41,2.8,0.78,0.23,0.11)  # Quinto set de experimentos
-
-
-
 STEP = 2**-10
 
 def get_f(par: Params) -> func:
@@ -41,9 +23,9 @@ def get_f(par: Params) -> func:
     return f
 
 
-def first_experiment():
-    r1, x1, y1, z1 = runge_kutta_default(get_f(p1), np.array([3.01, 5.05, 4.28]), 1, 60,STEP) 
-    r2, x2, y2, z2 = runge_kutta_default(get_f(p1), np.array([4.6, 5.9, 3.1]), 1, 60,STEP)
+def first_experiment(par: Params):
+    r1, x1, y1, z1 = runge_kutta_default(get_f(par), np.array([3.01, 5.05, 4.28]), 1, 60,STEP) 
+    r2, x2, y2, z2 = runge_kutta_default(get_f(par), np.array([4.6, 5.9, 3.1]), 1, 60,STEP)
 
     fig = plt.figure()
 
@@ -74,10 +56,10 @@ def first_experiment():
     plt.show()
 
 
-def second_experiment():
-    r1, x1, y1, z1 = runge_kutta_default(get_f(p2), np.array([0.3, 2.4, 3.9]), 1, 50,STEP) 
-    r2, x2, y2, z2 = runge_kutta_default(get_f(p2), np.array([0.6, 2.4, 4.1]), 1, 50,STEP)
-    r3, x3, y3, z3 = runge_kutta_default(get_f(p2), np.array([2.1, 1.2, 1.1]), 1, 50,STEP)
+def second_experiment(par: Params):
+    r1, x1, y1, z1 = runge_kutta_default(get_f(par), np.array([0.3, 2.4, 3.9]), 1, 50,STEP) 
+    r2, x2, y2, z2 = runge_kutta_default(get_f(par), np.array([0.6, 2.4, 4.1]), 1, 50,STEP)
+    r3, x3, y3, z3 = runge_kutta_default(get_f(par), np.array([2.1, 1.2, 1.1]), 1, 50,STEP)
 
     fig = plt.figure()
 
@@ -115,8 +97,8 @@ def second_experiment():
 
     plt.show()
 
-def third_experiment():
-    r1, x1, y1, z1 = runge_kutta_default(get_f(p3), np.array([0.3, 2.4, 3.9]), 1, 50,STEP) 
+def third_experiment(par: Params):
+    r1, x1, y1, z1 = runge_kutta_default(get_f(par), np.array([0.3, 2.4, 3.9]), 1, 50,STEP) 
 
     fig = plt.figure()
 
@@ -135,8 +117,8 @@ def third_experiment():
 
     plt.show()
 
-def fourth_experiment():
-    r1, x1, y1, z1 = runge_kutta_default(get_f(p4), np.array([1.2, 2.1, 2.4]), 1, 50,STEP) 
+def fourth_experiment(par: Params):
+    r1, x1, y1, z1 = runge_kutta_default(get_f(par), np.array([1.2, 2.1, 2.4]), 1, 50,STEP) 
 
     fig = plt.figure()
 
@@ -155,8 +137,8 @@ def fourth_experiment():
 
     plt.show()
 
-def fifth_experiment():
-    r1, x1, y1, z1 = runge_kutta_default(get_f(p5), np.array([1.2, 2.1, 4.28]), 1, 50,STEP) 
+def fifth_experiment(par: Params):
+    r1, x1, y1, z1 = runge_kutta_default(get_f(par), np.array([1.2, 2.1, 4.28]), 1, 50,STEP) 
 
     fig = plt.figure()
 
@@ -176,10 +158,10 @@ def fifth_experiment():
     plt.show()
 
 
-def sixth_experiment():
-    r1, x1, y1, z1 = runge_kutta_default(get_f(p6), np.array([0.3, 2.4, 3.9]), 1, 50, STEP) 
-    r2, x2, y2, z2 = runge_kutta_default(get_f(p6), np.array([4.1, 2.2, 5.1]), 1, 50, STEP)
-    r3, x3, y3, z3 = runge_kutta_default(get_f(p6), np.array([2.1, 1.2, 1.1]), 1, 50, STEP)
+def sixth_experiment(par: Params):
+    r1, x1, y1, z1 = runge_kutta_default(get_f(par), np.array([0.3, 2.4, 3.9]), 1, 50, STEP) 
+    r2, x2, y2, z2 = runge_kutta_default(get_f(par), np.array([4.1, 2.2, 5.1]), 1, 50, STEP)
+    r3, x3, y3, z3 = runge_kutta_default(get_f(par), np.array([2.1, 1.2, 1.1]), 1, 50, STEP)
 
     fig = plt.figure()
 
@@ -216,11 +198,3 @@ def sixth_experiment():
     ax.legend(loc='best')
 
     plt.show()
-
-
-first_experiment()
-second_experiment()
-third_experiment()
-fourth_experiment()
-fifth_experiment()
-sixth_experiment()

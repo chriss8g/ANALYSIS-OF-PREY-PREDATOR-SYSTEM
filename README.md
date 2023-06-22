@@ -1,8 +1,12 @@
 # ANÁLISIS DE *STABILITY AND NUMERICAL SIMULATION OF PREY-PREDATOR SYSTEM WITH HOLLING TYPE-II FUNCTIONAL RESPONSES FOR ADULT PREY*
+
+[![Open in Colab] (https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/chriss8g/ANALYSIS-OF-PREY-PREDATOR-SYSTEM/numerical_models/main.ipynb)
+
 ## Distribución del trabajo
+
 Aquí intenté desglosar un poco las tareas. Idealmente me gustaría terminar el informe antes del miércoles 1ero de junio(la semana que viene)
 
-**Importante:** Cada quien debe dejar explícito la bibliografía que use y el seudo código de lo que haga. En la carpeta *Partes* vayan poniéndo su información. También dice que se valorará el uso de interfaces gráficas, bases de datos y elementos interdisciplinarios, ni idea de a lo que se refieren.
+**Importante:** Cada quien debe dejar explícito la bibliografía que use y el pseudo código de lo que haga. En la carpeta *Partes* vayan poniéndo su información. También dice que se valorará el uso de interfaces gráficas, bases de datos y elementos interdisciplinarios, ni idea de a lo que se refieren.
 
 * [ ] **Marlon**: Intoducción del trabajo debe mencionar, los autores del artículo analizado, la revista donde se publicó. Año. Factor de impacto de la revista. Valoración del artículo: Explicación sobre lo que trata el artículo, problemática que se propone resolver, técnicas utilizadas.
 nota: recuerda que esto es solo la introducción, no te pases con la valoración del articulo
